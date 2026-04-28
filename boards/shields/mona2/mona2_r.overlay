@@ -1,7 +1,7 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-
+#include <behaviors/input_gestures_accel.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -64,11 +64,25 @@
     };
 };
 
+// 加速度センサー用に追加_20260429
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;
+    track-remainders;
+    min-factor = <850>;
+    max-factor = <2500>;
+    speed-threshold = <700>;
+    speed-max = <3000>;
+    acceleration-exponent = <2>;
+};
 
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
+    // 加速度センサー用に追加_20260429
+    input-processors =
+        <&pointer_accel>,
+        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
     scroller {
         layers = <1>,<5>,<9>;
