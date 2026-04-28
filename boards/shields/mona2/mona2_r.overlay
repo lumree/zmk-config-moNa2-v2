@@ -1,8 +1,8 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-// 加速度センサー用に追加_20260429
 #include <behaviors/input_gestures_accel.dtsi>
+#include <scroll-snap.dtsi> 
 
 &default_transform {
     col-offset = <6>;
@@ -65,7 +65,6 @@
     };
 };
 
-// 加速度センサー用に追加_20260429
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
@@ -76,11 +75,19 @@
     acceleration-exponent = <2>;
 };
 
+&zip_scroll_snap {
+    require-n-samples = <6>;
+    immediate-snap-threshold = <1200>;
+    lock-duration-ms = <150>;
+    lock-for-next-n-events = <8>;
+    idle-reset-timeout-ms = <150>;
+};
+
+
 // Overrides for the input listener node
 &trackball_central_listener {
-    status = "okay";
+    status = ;"okay"
     device = <&trackball_central>;
-    // 加速度センサー用に追加_20260429
     input-processors =
         <&pointer_accel>,
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
@@ -91,6 +98,7 @@
             // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
+            <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
             <&zip_scroll_scaler 1 12>;                           //スクロール量を1/12倍
     };
