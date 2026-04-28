@@ -53,7 +53,8 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
         cpi = <640>;
-        //force-awake;
+        force-awake;
+        force-awake-4ms-mode;
         //swap-xy;
         invert-x; //COROPIT版ではコメントアウトを外す
         invert-y; //COROPIT版ではコメントアウトを外す
@@ -76,7 +77,7 @@
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-            <&zip_scroll_scaler 1 10>;                           //スクロール量を1/10倍
+            <&zip_scroll_scaler 1 12>;                           //スクロール量を1/12倍
     };
 
 };
