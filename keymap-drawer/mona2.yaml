@@ -16,7 +16,6 @@ layers:
   - {t: D, h: LEFT GUI}
   - {t: F, h: LEFT COMMAND}
   - G
-  - {t: ▽, type: trans}
   - '-'
   - H
   - {t: J, h: RIGHT COMMAND}
@@ -59,7 +58,6 @@ layers:
   - '5'
   - '6'
   - LEFT GUI
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BACKSPACE
@@ -106,7 +104,6 @@ layers:
   - F5
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - (
   - )
   - \
@@ -142,7 +139,6 @@ layers:
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -192,7 +188,6 @@ layers:
   - {t: D, h: LEFT GUI}
   - {t: F, h: LCTRL}
   - G
-  - {t: ▽, type: trans}
   - '-'
   - H
   - {t: J, h: RIGHT COMMAND}
@@ -235,7 +230,6 @@ layers:
   - '5'
   - '6'
   - LEFT GUI
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BACKSPACE
@@ -282,7 +276,6 @@ layers:
   - F5
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - (
   - )
   - \
@@ -318,7 +311,6 @@ layers:
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -368,7 +360,6 @@ layers:
   - {t: D, h: LEFT ALT}
   - {t: F, h: LCTRL}
   - G
-  - {t: ▽, type: trans}
   - '-'
   - H
   - {t: J, h: LCTRL}
@@ -411,7 +402,6 @@ layers:
   - '5'
   - '6'
   - LEFT CONTROL
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BACKSPACE
@@ -458,7 +448,6 @@ layers:
   - F5
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - (
   - )
   - \
@@ -494,7 +483,6 @@ layers:
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -539,7 +527,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&Bluetooth4'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
