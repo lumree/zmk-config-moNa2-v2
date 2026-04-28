@@ -112,7 +112,7 @@
         Mac0 {
             bindings = <
 &mt LEFT_CONTROL Q  &kp W             &kp E           &kp R               &kp T                                                         &kp Y        &kp U                &kp I      &kp O    &kp P
-&mt LEFT_SHIFT A    &kp S             &mt LEFT_GUI D  &mt LEFT_COMMAND F  &kp G                 &trans                 &kp MINUS        &kp H        &mt RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
+&mt LEFT_SHIFT A    &kp S             &mt LEFT_GUI D  &mt LEFT_COMMAND F  &kp G                                        &kp MINUS        &kp H        &mt RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
 &kp Z               &kp X             &kp C           &kp V               &kp B                 &lt 12 SINGLE_QUOTE    &kp EQUAL        &kp N        &kp M                &kp COMMA  &kp DOT  &kp SLASH
 &mo 3               &kp LEFT_COMMAND  &kp LEFT_ALT    &mkp MB1            &mt LEFT_SHIFT SPACE  &lt 1 TAB              &lt 2 BACKSPACE  &lt 1 ENTER                                           &mkp MB1
             >;
@@ -125,7 +125,7 @@
         Mac1 {
             bindings = <
 &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
-&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans  &trans    &trans  &kp BACKSPACE    &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp DELETE
+&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans            &trans  &kp BACKSPACE    &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp DELETE
 &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans    &kp F7  &kp F10          &kp LG(UP_ARROW)  &kp F2          &kp LG(DOWN_ARROW)  &kp ESCAPE
 &kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                                 &mkp MB2
             >;
@@ -136,7 +136,7 @@
         Mac2 {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                               &kp CARET  &kp AMPERSAND         &kp ASTRK              &trans         &trans
-&kp F1           &kp F2       &kp F3    &kp F4      &kp F5          &trans            &trans  &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp GRAVE
+&kp F1           &kp F2       &kp F3    &kp F4      &kp F5                            &trans  &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp GRAVE
 &kp F6           &kp F7       &kp F8    &kp F9      &kp F10         &trans            &trans  &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans
 &kp F11          &kp F12      &trans    &trans      &kp LANGUAGE_1  &kp LANGUAGE_2    &trans  &trans                                                                 &trans
             >;
@@ -147,7 +147,7 @@
         Mac3 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                            &trans          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
+&trans  &trans  &trans  &trans  &trans            &trans          &trans          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
 &trans  &trans  &trans  &trans  &trans  &trans    &trans          &kp NUMBER_0    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LANGUAGE_2  &kp LANGUAGE_1                                            &trans
             >;
@@ -156,7 +156,7 @@
         iPad0 {
             bindings = <
 &mt LEFT_COMMAND Q  &kp W      &kp E           &kp R        &kp T                                                         &kp Y        &kp U                &kp I      &kp O    &kp P
-&mt LEFT_SHIFT A    &kp S      &mt LEFT_GUI D  &mt LCTRL F  &kp G                 &trans                 &kp MINUS        &kp H        &mt RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
+&mt LEFT_SHIFT A    &kp S      &mt LEFT_GUI D  &mt LCTRL F  &kp G                                        &kp MINUS        &kp H        &mt RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
 &kp Z               &kp X      &kp C           &kp V        &kp B                 &lt 12 SINGLE_QUOTE    &kp EQUAL        &kp N        &kp M                &kp COMMA  &kp DOT  &kp SLASH
 &mo 7               &kp GLOBE  &kp LEFT_ALT    &mkp MB1     &mt LEFT_SHIFT SPACE  &lt 5 TAB              &lt 6 BACKSPACE  &lt 5 ENTER                                           &mkp MB1
             >;
@@ -169,7 +169,7 @@
         iPad1 {
             bindings = <
 &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                       &kp LC(LS(TAB))    &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
-&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans  &trans    &trans     &kp BACKSPACE      &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp DELETE
+&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans            &trans     &kp BACKSPACE      &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp DELETE
 &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans    &kp LC(K)  &kp LC(SEMICOLON)  &kp LG(UP_ARROW)  &kp F2          &kp LG(DOWN_ARROW)  &kp ESCAPE
 &kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans     &trans                                                                   &mkp MB2
             >;
@@ -180,7 +180,7 @@
         iPad2 {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                               &kp CARET  &kp AMPERSAND         &kp ASTRK              &trans         &trans
-&kp F1           &kp F2       &kp F3    &kp F4      &kp F5          &trans            &trans  &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp GRAVE
+&kp F1           &kp F2       &kp F3    &kp F4      &kp F5                            &trans  &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp GRAVE
 &kp F6           &kp F7       &kp F8    &kp F9      &kp F10         &trans            &trans  &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans
 &kp F11          &kp F12      &trans    &trans      &kp LANGUAGE_1  &kp LANGUAGE_2    &trans  &trans                                                                 &trans
             >;
@@ -191,7 +191,7 @@
         iPad3 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                            &trans          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
+&trans  &trans  &trans  &trans  &trans            &trans          &trans          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
 &trans  &trans  &trans  &trans  &trans  &trans    &trans          &kp NUMBER_0    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LANGUAGE_2  &kp LANGUAGE_1                                            &trans
             >;
@@ -200,7 +200,7 @@
         Windows0 {
             bindings = <
 &kp Q             &kp W         &kp E           &kp R        &kp T                                                          &kp Y        &kp U        &kp I       &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &mt LEFT_ALT D  &mt LCTRL F  &kp G                 &trans                 &kp MINUS         &kp H        &mt LCTRL J  &mt LALT K  &kp L    &mt RIGHT_SHIFT SEMICOLON
+&mt LEFT_SHIFT A  &kp S         &mt LEFT_ALT D  &mt LCTRL F  &kp G                                        &kp MINUS         &kp H        &mt LCTRL J  &mt LALT K  &kp L    &mt RIGHT_SHIFT SEMICOLON
 &kp Z             &kp X         &kp C           &kp V        &kp B                 &lt 12 SINGLE_QUOTE    &kp EQUAL         &kp N        &kp M        &kp COMMA   &kp DOT  &kp SLASH
 &mo 11            &kp LEFT_ALT  &kp LEFT_GUI    &mkp MB1     &mt LEFT_SHIFT SPACE  &lt 9 TAB              &lt 10 BACKSPACE  &lt 9 ENTER                                    &mkp MB1
             >;
@@ -213,7 +213,7 @@
         Windows1 {
             bindings = <
 &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0      &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END           &kp LC(TAB)
-&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_CONTROL  &trans  &trans    &trans  &kp BACKSPACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp DELETE
+&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_CONTROL  &trans            &trans  &kp BACKSPACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &kp DELETE
 &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0      &trans  &trans    &kp F7  &kp F10          &kp PAGE_UP     &kp F2          &kp PAGE_DOWN     &kp ESCAPE
 &kp LEFT_SHIFT  &trans        &trans        &mkp MB2          &trans  &trans    &trans  &trans                                                             &mkp MB2
             >;
@@ -224,7 +224,7 @@
         Windows2 {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                     &kp CARET  &kp AMPERSAND         &kp ASTRK              &trans         &trans
-&kp F1           &kp F2       &kp F3    &kp F4      &kp F5       &trans     &trans  &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp GRAVE
+&kp F1           &kp F2       &kp F3    &kp F4      &kp F5                  &trans  &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp GRAVE
 &kp F6           &kp F7       &kp F8    &kp F9      &kp F10      &trans     &trans  &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans
 &kp F11          &kp F12      &trans    &trans      &kp F15      &kp F16    &trans  &trans                                                                 &trans
             >;
@@ -235,7 +235,7 @@
         Windows3 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                     &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans   &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RCTRL
+&trans  &trans  &trans  &trans  &trans            &trans   &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RCTRL
 &trans  &trans  &trans  &trans  &trans  &trans    &trans   &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp F16  &kp F15                                                 &trans
             >;
@@ -244,7 +244,7 @@
         Bluetooth {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &trans  &trans       &trans       &trans       &Bluetooth4
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans  &Bluetooth0  &Bluetooth1  &Bluetooth2  &Bluetooth3
+&trans  &trans  &trans  &trans  &trans            &trans       &trans  &Bluetooth0  &Bluetooth1  &Bluetooth2  &Bluetooth3
 &trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans  &trans       &trans       &trans       &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                         &bt BT_CLR_ALL
             >;
