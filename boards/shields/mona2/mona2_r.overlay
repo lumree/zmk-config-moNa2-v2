@@ -2,7 +2,7 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors/input_gestures_accel.dtsi>
-// #include <scroll-snap.dtsi> 
+#include <scroll-snap.dtsi> 
 
 &default_transform {
     col-offset = <6>;
@@ -75,17 +75,17 @@
     acceleration-exponent = <2>;
 };
 
-//&zip_scroll_snap {
-//    x-threshold = <5 8>;
-//    y-threshold = <8 5>;
-//    xy-threshold = <5 8>;
-//
-//    require-n-samples = <10>;
-//    immediate-snap-threshold = <1500>;
-//    lock-duration-ms = <200>;
-//    lock-for-next-n-events = <10>;
-//    idle-reset-timeout-ms = <200>;
-//};
+&zip_scroll_snap {
+    x-threshold = <5 8>;
+    y-threshold = <8 5>;
+    xy-threshold = <5 8>;
+
+    require-n-samples = <10>;
+    immediate-snap-threshold = <1500>;
+    lock-duration-ms = <200>;
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <200>;
+};
 
 
 // Overrides for the input listener node
@@ -102,7 +102,7 @@
             // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-            // <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
+            <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
             <&zip_scroll_scaler 1 12>;                           //スクロール量を1/12倍
     };
