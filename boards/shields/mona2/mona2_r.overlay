@@ -91,7 +91,7 @@
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay"
-    device = <&trackball_central>;
+    device = <&trackball_central>
     input-processors =
         <&pointer_accel>,
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
