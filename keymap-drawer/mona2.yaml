@@ -360,7 +360,7 @@ layers:
   - {t: D, h: LEFT ALT}
   - {t: F, h: LCTRL}
   - G
-  - '-'
+  - +
   - H
   - {t: J, h: LCTRL}
   - K
@@ -447,7 +447,7 @@ layers:
   - $
   - '%'
   - {t: ▽, type: trans}
-  - +
+  - {t: ▽, type: trans}
   - '&'
   - '['
   - ']'
@@ -459,7 +459,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '='
+  - {t: ▽, type: trans}
   - '|'
   - '{'
   - '}'
