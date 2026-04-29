@@ -381,9 +381,9 @@ layers:
   - Windows3
   - LEFT ALT
   - LEFT GUI
-  - '&mkp MB1'
+  - {t: LANG1, h: Windows3}
   - {t: SPACE, h: LEFT SHIFT}
-  - {t: TAB, h: Windows1}
+  - {t: LANG2, h: Windows1}
   - {t: BACKSPACE, h: Windows2}
   - {t: ENTER, h: Windows1}
   - '&mkp MB1'
@@ -491,8 +491,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '4'
-  - '5'
+  - '&mkp MB1'
+  - '&mkp MB2'
   - '6'
   - RCTRL
   - {t: ▽, type: trans}
