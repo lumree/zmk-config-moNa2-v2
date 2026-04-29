@@ -163,6 +163,16 @@
             hold-trigger-on-release;
         };
 
+        shift_space: shift_space {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
         scroll_up_down: mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
