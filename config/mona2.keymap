@@ -111,6 +111,15 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
+            /*
+            * Allow Alt hold only for:
+            * - Windows0 thumb cluster: Tab / Backspace / Enter
+            * - Windows1 nav cluster: Home / Up / End / Left / Down / Right
+            * - Windows0 V key for Ctrl+Alt+V
+            */
+            hold-trigger-key-positions = <6 7 8 17 18 19 24 38 39 40>;
+            hold-trigger-on-release;
         };
 
         f_left_mod: f_left_mod {
