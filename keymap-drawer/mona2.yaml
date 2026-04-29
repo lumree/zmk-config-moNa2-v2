@@ -383,7 +383,7 @@ layers:
   - LEFT GUI
   - '&mkp MB1'
   - {t: SPACE, h: LEFT SHIFT}
-  - {t: LANG2, h: Windows1}
+  - {t: TAB, h: Windows1}
   - {t: BACKSPACE, h: Windows2}
   - {t: ENTER, h: Windows1}
   - '&mkp MB1'
