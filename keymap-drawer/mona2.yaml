@@ -382,7 +382,7 @@ layers:
   - LEFT ALT
   - LEFT GUI
   - {t: LANG1, h: Windows3}
-  - {t: SPACE, h: LEFT SHIFT}
+  - {t: SPACE, h: Windows3}
   - {t: LANG2, h: Windows1}
   - {t: BACKSPACE, h: Windows2}
   - {t: ENTER, h: Windows1}
