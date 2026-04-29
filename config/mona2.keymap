@@ -32,6 +32,18 @@
             timeout-ms = <201>;
             layers = <8>;
         };
+
+        kana {
+            bindings = <&kp LANG1>;
+            key-positions = <17 18>;
+            timeout-ms = <201>;
+            layers = <8>;
+        };
+
+        ABC {
+            bindings = <&kp LANG2>;
+            key-positions = <13 12>;
+        };
     };
 
     macros {
@@ -118,6 +130,7 @@
             * - Windows1 nav cluster: Home / Up / End / Left / Down / Right
             * - Windows0 V key for Ctrl+Alt+V
             */
+
             hold-trigger-key-positions = <6 7 8 17 18 19 24 38 39 40>;
             hold-trigger-on-release;
         };
