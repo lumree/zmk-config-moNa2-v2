@@ -439,8 +439,8 @@ layers:
   - ^
   - '&'
   - '*'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '-'
+  - '='
   - F1
   - F2
   - F3
