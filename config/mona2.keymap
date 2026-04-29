@@ -113,6 +113,30 @@
             bindings = <&kp>, <&kp>;
         };
 
+        f_left_mod: f_left_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 20 27 28 29 30 31 32 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        j_right_mod: j_right_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 21 22 23 24 25 26 33 34 35 36 37 38>;
+            hold-trigger-on-release;
+        };
+
         scroll_up_down: mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
