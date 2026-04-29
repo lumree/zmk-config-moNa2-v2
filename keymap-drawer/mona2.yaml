@@ -379,9 +379,9 @@ layers:
   - .
   - /
   - Windows3
+  - LEFT ALT
   - LEFT GUI
   - '&mkp MB1'
-  - {t: LANG1, h: Windows3}
   - {t: SPACE, h: LEFT SHIFT}
   - {t: LANG2, h: Windows1}
   - {t: BACKSPACE, h: Windows2}
