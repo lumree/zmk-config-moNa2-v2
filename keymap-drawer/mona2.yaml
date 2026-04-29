@@ -431,12 +431,12 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp MB2'
   Windows2:
+  - '`'
+  - '"'
+  - ''''
+  - '~'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '*'
   - ^
   - (
   - )
@@ -447,19 +447,19 @@ layers:
   - $
   - '%'
   - {t: ▽, type: trans}
-  - ''''
+  - +
   - '&'
   - '['
   - ']'
   - '-'
-  - '`'
-  - +
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '='
-  - '~'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '"'
   - '|'
   - '{'
   - '}'
