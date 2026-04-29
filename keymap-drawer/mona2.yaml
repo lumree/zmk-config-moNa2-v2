@@ -563,3 +563,8 @@ combos:
 - p: [0, 9]
   k: AltGr+F4
   l: [Windows0]
+- p: [17, 18]
+  k: LANG1
+  l: [Windows0]
+- p: [13, 12]
+  k: LANG2
