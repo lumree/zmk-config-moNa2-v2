@@ -76,11 +76,11 @@
 };
 
 &zip_scroll_snap {
-    require-n-samples = <3>;
-    immediate-snap-threshold = <900>;
-    lock-duration-ms = <150>;
-    lock-for-next-n-events = <6>;
-    idle-reset-timeout-ms = <150>;
+    require-n-samples = <1>;
+    immediate-snap-threshold = <600>;
+    lock-duration-ms = <120>;
+    lock-for-next-n-events = <4>;
+    idle-reset-timeout-ms = <120>;
 };
 
 
