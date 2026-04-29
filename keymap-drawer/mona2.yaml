@@ -95,8 +95,8 @@ layers:
   - ^
   - '&'
   - '*'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '-'
+  - '='
   - F1
   - F2
   - F3
@@ -267,8 +267,8 @@ layers:
   - ^
   - '&'
   - '*'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '-'
+  - '='
   - F1
   - F2
   - F3
@@ -491,8 +491,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - '&mkp MB2'
+  - '4'
+  - '5'
   - '6'
   - RCTRL
   - {t: ▽, type: trans}
@@ -565,6 +565,7 @@ combos:
   l: [Windows0]
 - p: [17, 18]
   k: LANG1
-  l: [Windows0]
+  l: [Windows0, Mac0, iPad0]
 - p: [13, 12]
   k: LANG2
+  l: [Mac0, iPad0, Windows0]
