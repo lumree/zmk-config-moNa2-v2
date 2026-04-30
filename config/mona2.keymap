@@ -35,14 +35,14 @@
 
         kana {
             bindings = <&kp LANG1>;
-            key-positions = <12 13>;
+            key-positions = <17 18>;
             timeout-ms = <201>;
             layers = <8 0 4>;
         };
 
         ABC {
             bindings = <&kp LANG2>;
-            key-positions = <18 17>;
+            key-positions = <13 12>;
             layers = <0 4 8>;
             timeout-ms = <201>;
         };
