@@ -384,8 +384,8 @@ layers:
   - '&mkp MB1'
   - {t: SPACE, h: LEFT SHIFT}
   - {t: TAB, h: Windows1}
-  - {t: BACKSPACE, h: Windows2}
-  - {t: ENTER, h: Windows1}
+  - {t: BACKSPACE, h: Windows1}
+  - {t: ENTER, h: Windows2}
   - '&mkp MB1'
   Windows1:
   - '7'
@@ -470,8 +470,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   Windows3:
   - {t: ▽, type: trans}
