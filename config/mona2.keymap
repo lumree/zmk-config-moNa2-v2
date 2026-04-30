@@ -166,7 +166,7 @@
         shift_space: shift_space {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <180>;
             quick-tap-ms = <0>;
             require-prior-idle-ms = <0>;
