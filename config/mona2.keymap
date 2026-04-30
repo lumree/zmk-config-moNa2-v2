@@ -187,10 +187,10 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <80>;
+            tapping-term-ms = <165>;
             quick-tap-ms = <175>;
             bindings = <&mo>, <&kp>;
-            hold-while-undecided;
+            #hold-while-undecided;
         };
 
         scroll_up_down: mouse_wheel_up_down {
