@@ -560,7 +560,7 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR ALL
 combos:
-- p: [0, 9]
+- p: [10, 20]
   k: AltGr+F4
   l: [Windows0]
 - p: [12, 13]
