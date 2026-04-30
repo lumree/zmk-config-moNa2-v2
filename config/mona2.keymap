@@ -28,7 +28,7 @@
 
         alt_f4 {
             bindings = <&kp RA(F4)>;
-            key-positions = <0 9>;
+            key-positions = <10 20>;
             timeout-ms = <201>;
             layers = <8>;
         };
