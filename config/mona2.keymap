@@ -190,6 +190,7 @@
             tapping-term-ms = <165>;
             quick-tap-ms = <175>;
             bindings = <&mo>, <&kp>;
+
             #hold-while-undecided;
         };
 
@@ -207,10 +208,10 @@
 
         Mac0 {
             bindings = <
-&mt LEFT_CONTROL Q     &kp W             &kp E                  &kp R                       &kp T                                                                          &kp Y        &kp U                         &kp I      &kp O    &kp P
-&shift_a LEFT_SHIFT A  &kp S             &win_alt_d LEFT_GUI D  &f_left_mod LEFT_COMMAND F  &kp G                                                 &kp MINUS                &kp H        &j_right_mod RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
-&kp Z                  &kp X             &kp C                  &kp V                       &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                &kp N        &kp M                         &kp COMMA  &kp DOT  &kp SLASH
-&mo 3                  &kp LEFT_COMMAND  &kp LEFT_ALT           &mkp MB1                    &shift_space LEFT_SHIFT SPACE  &lt 1 TAB              &bksp_lt_hp 2 BACKSPACE  &lt 1 ENTER                                                    &mkp MB1
+&mt LEFT_CONTROL Q     &kp W             &kp E                  &kp R                       &kp T                                                                  &kp Y        &kp U                         &kp I      &kp O    &kp P
+&shift_a LEFT_SHIFT A  &kp S             &win_alt_d LEFT_GUI D  &f_left_mod LEFT_COMMAND F  &kp G                                                 &kp MINUS        &kp H        &j_right_mod RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
+&kp Z                  &kp X             &kp C                  &kp V                       &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL        &kp N        &kp M                         &kp COMMA  &kp DOT  &kp SLASH
+&mo 3                  &kp LEFT_COMMAND  &kp LEFT_ALT           &mkp MB1                    &shift_space LEFT_SHIFT SPACE  &lt 1 TAB              &lt 2 BACKSPACE  &lt 1 ENTER                                                    &mkp MB1
             >;
 
             sensor-bindings =
@@ -295,10 +296,10 @@
 
         Windows0 {
             bindings = <
-&kp Q                  &kp W         &kp E                  &kp R                &kp T                                                                   &kp Y        &kp U                 &kp I      &kp O    &kp P
-&shift_a LEFT_SHIFT A  &kp S         &win_alt_d LEFT_ALT D  &f_left_mod LCTRL F  &kp G                                                 &kp PLUS          &kp H        &j_right_mod LCTRL J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
-&kp Z                  &kp X         &kp C                  &kp V                &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL         &kp N        &kp M                 &kp COMMA  &kp DOT  &kp SLASH
-&mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &lt 10 BACKSPACE  &lt 9 ENTER                                            &mkp MB1
+&kp Q                  &kp W         &kp E                  &kp R                &kp T                                                                           &kp Y        &kp U                 &kp I      &kp O    &kp P
+&shift_a LEFT_SHIFT A  &kp S         &win_alt_d LEFT_ALT D  &f_left_mod LCTRL F  &kp G                                                 &kp PLUS                  &kp H        &j_right_mod LCTRL J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
+&kp Z                  &kp X         &kp C                  &kp V                &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                 &kp N        &kp M                 &kp COMMA  &kp DOT  &kp SLASH
+&mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &bksp_lt_hp 10 BACKSPACE  &lt 9 ENTER                                            &mkp MB1
             >;
 
             sensor-bindings =
