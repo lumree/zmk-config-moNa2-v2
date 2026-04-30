@@ -190,6 +190,7 @@
             tapping-term-ms = <165>;
             quick-tap-ms = <175>;
             bindings = <&mo>, <&kp>;
+            hold-while-undecided;
         };
 
         scroll_up_down: mouse_wheel_up_down {
