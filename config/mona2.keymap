@@ -181,7 +181,7 @@
             quick-tap-ms = <0>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <37 38 40>;
+            hold-trigger-key-positions = <13 37 38 40>;
         };
 
         bksp_lt_hp: backspace_layer_tap_hold_preferred {
