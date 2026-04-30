@@ -182,7 +182,11 @@
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
 
+<<<<<<< HEAD
             hold-trigger-key-positions = <13 30 31 37 38 40>;
+=======
+            hold-trigger-key-positions = <13 30 31 32 37 38 40>;
+>>>>>>> stg
         };
 
         bksp_lt_hp: backspace_layer_tap_hold_preferred {
