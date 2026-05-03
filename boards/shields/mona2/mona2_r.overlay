@@ -53,7 +53,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
-        cpi = <640>;
+        cpi = <610>;
         force-awake;
         force-awake-4ms-mode;
         //swap-xy;
@@ -65,15 +65,15 @@
     };
 };
 
-&pointer_accel {
-    input-type = <INPUT_EV_REL>;
-    track-remainders;
-    min-factor = <620>;
-    max-factor = <1700>;
-    speed-threshold = <3000>;
-    speed-max = <4000>;
-    acceleration-exponent = <3>;
-};
+// &pointer_accel {
+//     input-type = <INPUT_EV_REL>;
+//     track-remainders;
+//     min-factor = <620>;
+//     max-factor = <1700>;
+//     speed-threshold = <3000>;
+//     speed-max = <4000>;
+//     acceleration-exponent = <3>;
+// };
 
 // &zip_scroll_snap {
 //     require-n-samples = <1>;
@@ -89,7 +89,7 @@
     status = "okay";
     device = <&trackball_central>;
     input-processors =
-        <&pointer_accel>,
+        // <&pointer_accel>,
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
     scroller {
