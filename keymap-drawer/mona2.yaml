@@ -435,7 +435,7 @@ layers:
   - '"'
   - ''''
   - '~'
-  - {t: ▽, type: trans}
+  - '&ascii_slash'
   - '*'
   - ^
   - (
@@ -456,7 +456,7 @@ layers:
   - {t: ▽, type: trans}
   - +
   - '='
-  - {t: ▽, type: trans}
+  - '&ascii_minus'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
