@@ -68,7 +68,7 @@
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
-    min-factor = <675>;
+    min-factor = <500>;
     max-factor = <1500>;
     speed-threshold = <1250>;
     speed-max = <2500>;
@@ -100,7 +100,7 @@
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             // <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-            <&zip_scroll_scaler 1 15>;                           //スクロール量を1/15倍
+            <&zip_scroll_scaler 1 20>;                           //スクロール量を1/20倍
     };
 
 };
