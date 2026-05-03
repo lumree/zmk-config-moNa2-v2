@@ -186,6 +186,22 @@
             hold-trigger-on-release;
         };
 
+        ascii_slash: ascii_slash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <20>;
+            bindings = <&kp LANG2>, <&kp SLASH>, <&kp LANG1>;
+        };
+
+        ascii_minus: ascii_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <20>;
+            bindings = <&kp LANG2>, <&kp MINUS>, <&kp LANG1>;
+        };        
+
         bksp_lt_hp: backspace_layer_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
