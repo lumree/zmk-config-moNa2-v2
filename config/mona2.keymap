@@ -191,7 +191,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <20>;
-            bindings = <&kp LANG2>, <&kp SLASH>, <&kp LANG1>;
+            bindings = <&kp LANG2 &kp SLASH &kp LANG1>;
         };
 
         ascii_minus: ascii_minus {
@@ -199,8 +199,8 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <20>;
-            bindings = <&kp LANG2>, <&kp MINUS>, <&kp LANG1>;
-        };        
+            bindings = <&kp LANG2 &kp MINUS &kp LANG1>;
+        };
 
         bksp_lt_hp: backspace_layer_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
@@ -339,10 +339,10 @@
 
         Windows2 {
             bindings = <
-&kp GRAVE        &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp TILDE   &trans                         &kp ASTERISK  &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp NON_US_BACKSLASH
-&kp EXCLAMATION  &kp AT_SIGN        &kp HASH          &kp DOLLAR  &kp PERCENT            &trans  &trans        &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp MINUS
-&trans           &trans             &kp PLUS          &kp EQUAL   &trans       &trans    &trans  &trans        &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDERSCORE
-&trans           &trans             &trans            &trans      &trans       &trans    &trans  &trans                                                                    &trans
+&kp GRAVE        &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp TILDE   &ascii_slash                    &kp ASTERISK  &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp NON_US_BACKSLASH
+&kp EXCLAMATION  &kp AT_SIGN        &kp HASH          &kp DOLLAR  &kp PERCENT             &trans  &trans        &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp MINUS
+&trans           &trans             &kp PLUS          &kp EQUAL   &ascii_minus  &trans    &trans  &trans        &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDERSCORE
+&trans           &trans             &trans            &trans      &trans        &trans    &trans  &trans                                                                    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
