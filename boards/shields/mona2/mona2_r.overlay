@@ -72,7 +72,7 @@
     max-factor = <1500>;
     speed-threshold = <1250>;
     speed-max = <2500>;
-    acceleration-exponent = <2>;
+    acceleration-exponent = <3>;
 };
 
 // &zip_scroll_snap {
@@ -100,7 +100,7 @@
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             // <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-            <&zip_scroll_scaler 1 12>;                           //スクロール量を1/12倍
+            <&zip_scroll_scaler 1 15>;                           //スクロール量を1/15倍
     };
 
 };
