@@ -183,7 +183,7 @@
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <13 30 31 32 36 37 38 40>;
-            hold-trigger-on-release;
+            #hold-trigger-on-release;
         };
 
         ascii_slash: ascii_slash {
