@@ -167,8 +167,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <160>;
-            quick-tap-ms = <160>;
+            tapping-term-ms = <165>;
+            quick-tap-ms = <165>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
         };
@@ -184,6 +184,16 @@
 
             hold-trigger-key-positions = <13 28 30 31 32 36 37 38 40>;
             #hold-trigger-on-release;
+        };
+
+        enter_lt: enter_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <160>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <0>;
+            bindings = <&kp>, <&kp>;
         };
 
         ascii_slash: ascii_slash {
