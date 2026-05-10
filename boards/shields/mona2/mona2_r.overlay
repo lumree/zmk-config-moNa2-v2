@@ -1,10 +1,11 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zmk-input-inertia/input/processor/input_inertia.dtsi>
 // #include <behaviors/input_gestures_accel.dtsi>
 // #include <scroll-snap.dtsi> 
-// ↓ input-inertia setting
-#include <zmk-input-inertia/input/processor/input_inertia.dtsi>
+
+
 
 &default_transform {
     col-offset = <6>;
