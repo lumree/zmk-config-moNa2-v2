@@ -193,7 +193,7 @@
             tapping-term-ms = <160>;
             quick-tap-ms = <160>;
             require-prior-idle-ms = <0>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
 
         ascii_slash: ascii_slash {
