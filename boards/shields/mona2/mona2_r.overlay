@@ -3,6 +3,8 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 // #include <behaviors/input_gestures_accel.dtsi>
 // #include <scroll-snap.dtsi> 
+// ↓ input-inertia setting
+#include <zmk-input-inertia/input/processor/input_inertia.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -109,7 +111,8 @@
     status = "okay";
     device = <&trackball_central>;
     input-processors =
-        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+        <&zip_inertia>; // ★同一ノードを参照
         // <&pointer_accel>;
 
     scroller {
