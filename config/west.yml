@@ -41,8 +41,8 @@ manifest:
     # - name: zmk-scroll-snap
     #   remote: kot149
     #   revision: v1
-    # - name: zmk-input-inertia
-    #   remote: lumree
-    #   revision: main
+    - name: zmk-input-inertia
+      remote: lumree
+      revision: v0.4-branch
   self:
     path: config
