@@ -100,7 +100,7 @@
     move-threshold-stop = <1>;          // 慣性が停止する移動量 (pix/report)
 
     // --- スクロールの設定 ---
-    scroll-decay-factor-int = <85>;    // スクロール減衰率
+    scroll-decay-factor-int = <30>;    // スクロール減衰率85->30
     scroll-report-interval-ms = <65>;  // スクロールレポート間隔 (ms)
     scroll-threshold-start = <2>;      // 慣性が発動する最小スクロール量 (pix/report)
     scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
