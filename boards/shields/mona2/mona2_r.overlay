@@ -66,10 +66,10 @@
         y-input-code = <INPUT_REL_Y>;
         inertial-scroll;
         inertial-scroll-layers = <1 5 9>;
-        inertial-scroll-gain-pct = <130>;
-        inertial-scroll-decay-pct = <99>;
-        inertial-scroll-interval-ms = <10>;
-        inertial-scroll-threshold = <4>;
+        inertial-scroll-gain-pct = <150>;
+        inertial-scroll-decay-pct = <95>;
+        inertial-scroll-interval-ms = <5>;
+        inertial-scroll-threshold = <6>;
     };
 };
 
@@ -129,7 +129,7 @@
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             // <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-            <&zip_scroll_scaler 1 20>;                           //スクロール量を1/20倍
+            <&zip_scroll_scaler 1 30>;                           //スクロール量を1/20倍
             // <&zip_inertia>; // ★同一ノードを参照 (重要: 同じノードを指定)
     };
 
