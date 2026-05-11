@@ -16,8 +16,10 @@ manifest:
       url-base: https://github.com/oleksandrmaslov
     # - name: kot149     # <-- Scroll Snap
     #   url-base: https://github.com/kot149
-    - name: lumree    # <-- input-inertia
-      url-base: https://github.com/lumree
+    # - name: lumree    # <-- input-inertia
+    #   url-base: https://github.com/lumree
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -42,7 +44,7 @@ manifest:
     #   remote: kot149
     #   revision: v1
     - name: zmk-input-inertia
-      remote: lumree
-      revision: v0.4-branch
+      remote: amgskobo
+      revision: main
   self:
     path: config
