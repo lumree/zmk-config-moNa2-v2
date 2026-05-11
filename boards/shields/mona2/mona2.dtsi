@@ -91,10 +91,6 @@
                 ;
     };
 
-    &uicr {
-        nfct-pins-as-gpios;
-    };
-
     //right hand trackball
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
@@ -125,3 +121,7 @@
     };
 
 };
+
+    &uicr {
+        nfct-pins-as-gpios;
+    };
