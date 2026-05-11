@@ -331,8 +331,8 @@
             >;
 
             sensor-bindings =
-                <&scroll_up_down>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                <&scroll_up_down>;
+                /*<&inc_dec_kp C_VOL_DN C_VOL_UP>; */
         };
 
         Windows1 {
