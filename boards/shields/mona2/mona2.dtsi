@@ -4,6 +4,12 @@
 #include <physical_layouts.dtsi>
 
 / {
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
     chosen {
         zmk,physical-layout = &physical_layout0;
     };
@@ -72,7 +78,7 @@
             RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)     RC(3,8) RC(3,9)                         RC(3,10)         
         >;
     };
-    
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
@@ -83,6 +89,10 @@
                 , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
                 , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
                 ;
+    };
+
+    &uicr {
+        nfct-pins-as-gpios;
     };
 
     //right hand trackball
