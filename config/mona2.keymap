@@ -330,9 +330,7 @@
 &mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &bksp_lt_hp 10 BACKSPACE  &enter_lt 9 ENTER                                            &mkp MB1
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         Windows1 {
