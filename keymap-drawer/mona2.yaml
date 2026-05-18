@@ -383,7 +383,7 @@ layers:
   - LEFT GUI
   - '&mkp MB1'
   - {t: SPACE, h: LEFT SHIFT}
-  - {t: TAB, h: Windows1}
+  - {t: TAB, h: Windows3}
   - {t: BACKSPACE, h: Windows2}
   - {t: ENTER, h: Windows1}
   - '&mkp MB1'
@@ -426,9 +426,9 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp MB2'
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - '&mkp MB2'
   Windows2:
   - '`'
@@ -474,20 +474,20 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Windows3:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '7'
   - '8'
   - '9'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - F5
+  - F6
+  - F7
+  - F8
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -495,10 +495,10 @@ layers:
   - '5'
   - '6'
   - RCTRL
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - F9
+  - F10
+  - F11
+  - F12
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
