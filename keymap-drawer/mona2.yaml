@@ -363,7 +363,7 @@ layers:
   - '-'
   - H
   - {t: J, h: LCTRL}
-  - {t: LALT, h: K}
+  - {t: K, h: LEFT ALT}
   - L
   - {t: ;, h: RIGHT SHIFT}
   - Z
