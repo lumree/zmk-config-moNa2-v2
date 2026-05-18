@@ -1,8 +1,11 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <behaviors/input_gestures_accel.dtsi>
+// #include <zmk-input-inertia/input/processor/input_inertia.dtsi>
+// #include <behaviors/input_gestures_accel.dtsi>
 // #include <scroll-snap.dtsi> 
+
+
 
 &default_transform {
     col-offset = <6>;
@@ -53,44 +56,70 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
-        cpi = <640>;
+        cpi = <610>;
         force-awake;
-        force-awake-4ms-mode;
         //swap-xy;
         invert-x; //COROPIT版ではコメントアウトを外す
         invert-y; //COROPIT版ではコメントアウトを外す
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+        inertial-scroll;
+        inertial-scroll-layers = <1 5 9>;
+        inertial-scroll-gain-pct = <150>;
+        inertial-scroll-decay-pct = <95>;
+        inertial-scroll-interval-ms = <5>;
+        inertial-scroll-threshold = <6>;
     };
 };
 
-&pointer_accel {
-    input-type = <INPUT_EV_REL>;
-    track-remainders;
-    min-factor = <675>;
-    max-factor = <1500>;
-    speed-threshold = <1250>;
-    speed-max = <2500>;
-    acceleration-exponent = <2>;
-};
-
-// &zip_scroll_snap {
-//     require-n-samples = <1>;
-//     immediate-snap-threshold = <600>;
-//     lock-duration-ms = <120>;
-//     lock-for-next-n-events = <4>;
-//     idle-reset-timeout-ms = <120>;
+// &pointer_accel {
+//     input-type = <INPUT_EV_REL>;
+//     track-remainders;
+//     min-factor = <620>;
+//     max-factor = <1700>;
+//     speed-threshold = <3000>;
+//     speed-max = <4000>;
+//     acceleration-exponent = <3>;
 // };
 
+// &zip_scroll_snap {
+//   x-threshold = <5 8>;
+//   y-threshold = <8 5>;
+//   xy-threshold = <5 8>;
+// 
+//   require-n-samples = <5>;
+//   immediate-snap-threshold = <600>;
+//   lock-duration-ms = <200>;
+//   lock-for-next-n-events = <10>;
+//   idle-reset-timeout-ms = <200>;
+// };
+
+// &zip_inertia {
+//     // 慣性が始まるまでの待ち時間 (推奨: センサーのポーリングレートの2倍以上)
+//     trigger-ms = <35>; 
+// 
+//     // --- マウス移動の設定 ---
+//     move-decay-factor-int = <90>;       // 減衰率 (0-100)
+//     move-report-interval-ms = <35>;     // レポート送信間隔 (ms)
+//     move-threshold-start = <15>;        // 慣性が発動する最小移動量 (pix/report)
+//     move-threshold-stop = <1>;          // 慣性が停止する移動量 (pix/report)
+// 
+//     // --- スクロールの設定 ---
+//     scroll-decay-factor-int = <30>;    // スクロール減衰率85->30
+//     scroll-report-interval-ms = <65>;  // スクロールレポート間隔 (ms)
+//     scroll-threshold-start = <2>;      // 慣性が発動する最小スクロール量 (pix/report)
+//     scroll-threshold-stop = <0>;       // 慣性が停止するスクロール量 (pix/report)
+// };
 
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors =
-        <&pointer_accel>,
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+        // <&zip_inertia>; // ★同一ノードを参照
+        // <&pointer_accel>;
 
     scroller {
         layers = <1>,<5>,<9>;
@@ -100,7 +129,8 @@
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             // <&zip_scroll_snap>,                                 //kotさんのscroll_snap追加
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-            <&zip_scroll_scaler 1 12>;                           //スクロール量を1/12倍
+            <&zip_scroll_scaler 1 30>;                           //スクロール量を1/20倍
+            // <&zip_inertia>; // ★同一ノードを参照 (重要: 同じノードを指定)
     };
 
 };

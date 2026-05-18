@@ -6,7 +6,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 5
 #define SCROLL 6
 
@@ -146,7 +145,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 20 27 28 29 30 31 32 39 40 41>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 20 27 28 29 30 31 32 36 39 40 41>;
             hold-trigger-on-release;
         };
 
@@ -159,7 +158,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 21 22 23 24 25 26 33 34 35 36 37 38>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 19 21 22 23 24 25 26 33 34 35 36 37 38>;
             hold-trigger-on-release;
         };
 
@@ -167,8 +166,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <165>;
+            quick-tap-ms = <175>;
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
         };
@@ -182,11 +181,34 @@
             require-prior-idle-ms = <0>;
             bindings = <&kp>, <&kp>;
 
-<<<<<<< HEAD
-            hold-trigger-key-positions = <13 30 31 37 38 40>;
-=======
-            hold-trigger-key-positions = <13 30 31 32 37 38 40>;
->>>>>>> stg
+            hold-trigger-key-positions = <13 30 31 32 36 37 38 40>;
+            #hold-trigger-on-release;
+        };
+
+        enter_lt: enter_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <165>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <0>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        ascii_slash: ascii_slash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <20>;
+            bindings = <&kp LANG2 &kp SLASH &kp LANG1>;
+        };
+
+        ascii_minus: ascii_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <20>;
+            bindings = <&kp LANG2 &kp MINUS &kp LANG1>;
         };
 
         bksp_lt_hp: backspace_layer_tap_hold_preferred {
@@ -302,15 +324,15 @@
 
         Windows0 {
             bindings = <
-&kp Q                  &kp W         &kp E                  &kp R                &kp T                                                                           &kp Y        &kp U                 &kp I      &kp O    &kp P
-&shift_a LEFT_SHIFT A  &kp S         &win_alt_d LEFT_ALT D  &f_left_mod LCTRL F  &kp G                                                 &kp MINUS                 &kp H        &j_right_mod LCTRL J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
-&kp Z                  &kp X         &kp C                  &kp V                &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                 &kp N        &kp M                 &kp COMMA  &kp DOT  &kp SLASH
-&mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &bksp_lt_hp 10 BACKSPACE  &lt 9 ENTER                                            &mkp MB1
+&kp Q                  &kp W         &kp E                  &kp R                &kp T                                                                           &kp Y              &kp U                 &kp I      &kp O    &kp P
+&shift_a LEFT_SHIFT A  &kp S         &win_alt_d LEFT_ALT D  &f_left_mod LCTRL F  &kp G                                                 &kp MINUS                 &kp H              &j_right_mod LCTRL J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
+&kp Z                  &kp X         &kp C                  &kp V                &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                 &kp N              &kp M                 &kp COMMA  &kp DOT  &kp SLASH
+&mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &bksp_lt_hp 10 BACKSPACE  &enter_lt 9 ENTER                                            &mkp MB1
             >;
 
             sensor-bindings =
-                <&scroll_up_down>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                <&scroll_up_down>;
+                /*<&inc_dec_kp C_VOL_DN C_VOL_UP>; */
         };
 
         Windows1 {
@@ -326,10 +348,10 @@
 
         Windows2 {
             bindings = <
-&kp GRAVE        &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp TILDE   &trans                         &kp ASTERISK  &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp NON_US_BACKSLASH
-&kp EXCLAMATION  &kp AT_SIGN        &kp HASH          &kp DOLLAR  &kp PERCENT            &trans  &trans        &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp MINUS
-&trans           &trans             &kp PLUS          &kp EQUAL   &trans       &trans    &trans  &trans        &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDERSCORE
-&trans           &trans             &trans            &trans      &trans       &trans    &trans  &trans                                                                    &trans
+&kp GRAVE        &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp TILDE   &ascii_slash                    &kp ASTERISK  &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp NON_US_BACKSLASH
+&kp EXCLAMATION  &kp AT_SIGN        &kp HASH          &kp DOLLAR  &kp PERCENT             &trans  &trans        &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp MINUS
+&trans           &trans             &kp PLUS          &kp EQUAL   &ascii_minus  &trans    &trans  &trans        &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDERSCORE
+&trans           &trans             &trans            &trans      &trans        &trans    &trans  &trans                                                                    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -337,10 +359,10 @@
 
         Windows3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                     &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&trans  &trans  &trans  &trans  &trans            &trans   &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RCTRL
-&trans  &trans  &trans  &trans  &trans  &trans    &trans   &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp F16  &kp F15                                                 &trans
+&trans  &trans  &trans  &trans  &trans                    &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RCTRL
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                  &trans
             >;
         };
 
