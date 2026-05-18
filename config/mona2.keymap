@@ -333,10 +333,10 @@
 
         Windows0 {
             bindings = <
-&kp Q                  &kp W         &kp E                  &kp R                &kp T                                                                           &kp Y              &kp U                 &kp I              &kp O    &kp P
-&shift_a LEFT_SHIFT A  &kp S         &win_alt_d LEFT_ALT D  &f_left_mod LCTRL F  &kp G                                                 &kp MINUS                 &kp H              &j_right_mod LCTRL J  &win_alt_k K LALT  &kp L    &mt RIGHT_SHIFT SEMICOLON
-&kp Z                  &kp X         &kp C                  &kp V                &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                 &kp N              &kp M                 &kp COMMA          &kp DOT  &kp SLASH
-&mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &bksp_lt_hp 10 BACKSPACE  &enter_lt 9 ENTER                                                    &mkp MB1
+&kp Q                  &kp W         &kp E                  &kp R                &kp T                                                                           &kp Y              &kp U                 &kp I                  &kp O    &kp P
+&shift_a LEFT_SHIFT A  &kp S         &win_alt_d LEFT_ALT D  &f_left_mod LCTRL F  &kp G                                                 &kp MINUS                 &kp H              &j_right_mod LCTRL J  &win_alt_k LEFT_ALT K  &kp L    &mt RIGHT_SHIFT SEMICOLON
+&kp Z                  &kp X         &kp C                  &kp V                &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                 &kp N              &kp M                 &kp COMMA              &kp DOT  &kp SLASH
+&mo 11                 &kp LEFT_ALT  &kp LEFT_GUI           &mkp MB1             &shift_space LEFT_SHIFT SPACE  &lt 9 TAB              &bksp_lt_hp 10 BACKSPACE  &enter_lt 9 ENTER                                                        &mkp MB1
             >;
 
             sensor-bindings = <&scroll_up_down>;
