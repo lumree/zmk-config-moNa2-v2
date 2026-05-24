@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: zettaface  # <-- Input Processor Keybind
       url-base: https://github.com/zettaface
+    - name: kot149       # <-- Mouse Gesture
+      url-base: https://github.com/kot149
   projects:
     # ── ZMK 本体は cormoran さんの DYA Studio 対応 fork に切替 ──
     - name: zmk
@@ -49,6 +51,13 @@ manifest:
       revision: v0.3
     - name: zmk-input-processor-keybind
       remote: zettaface
+      revision: main
+    # ── Mouse Gesture (kot149 + custom RPC) ──
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
+    - name: zmk-module-mouse-gesture-rpc
+      remote: shakushakupanda
       revision: main
   self:
     path: config
