@@ -16,6 +16,8 @@ manifest:
       url-base: https://github.com/zettaface
     - name: kot149       # <-- Mouse Gesture
       url-base: https://github.com/kot149
+    - name: shakushakupanda  # <-- mouse gesture RPC module
+      url-base: https://github.com/shakushakupanda
   projects:
     # ── ZMK 本体は cormoran さんの DYA Studio 対応 fork に切替 ──
     - name: zmk
