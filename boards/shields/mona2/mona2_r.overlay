@@ -72,16 +72,6 @@
 
 /* ─────────────────────────────────────────────────────────────
    scroll_runtime_input_processor をスクロール変換器として上書き
-   デフォルトでは x-codes=HWHEEL / y-codes=WHEEL で
-   「すでにスクロールイベントになっているもの」しか処理しない設定。
-   トラックボールの生イベント(REL_X/Y) を受け取って
-   xy-to-scroll-enabled でスクロールに変換する形に切替える。
-
-   ・active-layers : デフォルトのスクロールレイヤー bitmask
-       bit6=scroll_win, bit7=scroll_mac → 0x000000C0
-     DYA Studio から変更可能(再ビルド不要)
-   ・xy-to-scroll-enabled : REL_X→HWHEEL, REL_Y→WHEEL に変換
-     こちらも Studio から ON/OFF 可能
    ────────────────────────────────────────────────────── */
 &scroll_runtime_input_processor {
     x-codes = <INPUT_REL_X>;
@@ -89,50 +79,32 @@
     xy-to-scroll-enabled;
     active-layers = <0x000000C0>; /* layer6 + layer7 */
     scale-multiplier = <1>;
-    scale-divisor = <4>; /* スクロール速度。大きいほど遅い。Studioで調整可 */
-
-    /* 軸ロック(縦のみ等)が欲しければ AXIS_SNAP_MODE_Y を初期値に */
-    /* #include <dt-bindings/zmk/runtime_input_processor.h> 必要 */
-    /* axis-snap-mode = <2>; */
-    /* axis-snap-threshold = <100>; */
+    scale-divisor = <4>;
 };
 
-/* マウス用は全レイヤーで有効 (active-layers = 0 がデフォルト) */
 &mouse_runtime_input_processor {
-    /* 例: マウス感度初期値を Studio から調整したいだけならここで触らなくてOK */
 };
 
 /* ─────────────────────────────────────────────────────────────
    kot149 mouse-gesture input processor (Phase 5)
-
-   - always-active で常時 ON
-   - placeholder gesture を 1 個定義 (NUM_DTS_DEFAULTS > 0 にして
-     seed_from_dts() を機能させるため)
-   - 起動後は RPC (`mg_cli` / DYA Studio Web UI) で trie 上書き可
-   - stroke-size, idle-timeout-ms 等は RPC の Settings からも変更可
+   トップレベルの新規ノードなので `/ { ... }` で包む
    ────────────────────────────────────────────────────── */
-mg: mouse_gesture {
-    compatible = "zmk,input-processor-mouse-gesture";
-    #input-processor-cells = <0>;
-    always-active;
-    stroke-size = <200>;
-    idle-timeout-ms = <150>;
-    gesture-cooldown-ms = <500>;
+/ {
+    mg: mouse_gesture {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        always-active;
+        stroke-size = <200>;
+        idle-timeout-ms = <150>;
+        gesture-cooldown-ms = <500>;
 
-    placeholder {
-        pattern = <GESTURE_UP GESTURE_RIGHT>;
-        bindings = <&kp ESC>;
+        placeholder {
+            pattern = <GESTURE_UP GESTURE_RIGHT>;
+            bindings = <&kp ESC>;
+        };
     };
 };
 
-/* ─────────────────────────────────────────────────────────────
-   入力リスナー
-   メインチェーン: mg(ジェスチャ判定) → mouse(感度) → scroll
-   ・mg は raw event を最初に見てパターン蓄積。発火時に behavior 実行
-   ・mouse は全レイヤーで走る(scale/invert を適用)
-   ・scroll は active-layers のレイヤーでのみ走る
-     → 該当レイヤー以外では素通しでマウスとして動作
-   ────────────────────────────────────────────────────── */
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
