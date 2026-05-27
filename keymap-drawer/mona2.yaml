@@ -495,7 +495,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&studio_unlock'
-  - {t: ▽, type: trans}
+  - B
   - '1'
   - '2'
   - '3'
