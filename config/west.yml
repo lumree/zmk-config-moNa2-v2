@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
-    # - name: badjeff    # <-- PMW3610
-    #   url-base: https://github.com/badjeff
+    - name: badjeff    # <-- PMW3610
+      url-base: https://github.com/badjeff
     # - name: sekigon-gonnoc  # <-- PAW3222
     #   url-base: https://github.com/sekigon-gonnoc
     - name: caksoylar  # <-- RGB LED
