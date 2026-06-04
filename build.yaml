@@ -34,4 +34,5 @@ include:
   - board: seeeduino_xiao_ble
     shield: mona2_r rgbled_adapter
     cmake-args: '-DEXTRA_CONF_FILE=../../config/paw3222.conf -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_ZMK_LOG_LEVEL_DBG=y'
+    snippet: studio-rpc-usb-uart
     artifact-name: mona2_r-paw3222-log
