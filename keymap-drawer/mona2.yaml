@@ -50,9 +50,9 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - Ctl+Sft+TAB
-  - Gui+LEFT
+  - HOME
   - UP ARROW
-  - Gui+RIGHT
+  - END
   - Ctl+TAB
   - '4'
   - '5'
@@ -73,9 +73,9 @@ layers:
   - {t: ▽, type: trans}
   - F7
   - F10
-  - Gui+UP ARROW
+  - PAGE UP
   - F2
-  - Gui+DOWN ARROW
+  - PAGE DOWN
   - ESCAPE
   - LEFT SHIFT
   - {t: ▽, type: trans}
