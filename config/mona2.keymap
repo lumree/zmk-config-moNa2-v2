@@ -258,10 +258,10 @@
 
         Mac1 {
             bindings = <
-&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
-&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans            &trans  &kp BACKSPACE    &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp DELETE
-&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans    &kp F7  &kp F10          &kp LG(UP_ARROW)  &kp F2          &kp LG(DOWN_ARROW)  &kp ESCAPE
-&kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                                 &mkp MB2
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
+&kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans            &trans  &kp BACKSPACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans    &kp F7  &kp F10          &kp PAGE_UP     &kp F2          &kp PAGE_DOWN    &kp ESCAPE
+&kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(EQUAL)>;
