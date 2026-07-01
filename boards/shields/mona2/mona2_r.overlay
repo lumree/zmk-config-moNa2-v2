@@ -94,7 +94,10 @@
     mg: mouse_gesture {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        always-active;
+        /* Do not set always-active here: &mg_set N controls which gesture-key
+         * set is active while held. Keeping the matcher always active makes
+         * different gesture keys share/retain the same active gesture state.
+         */
         stroke-size = <200>;
         idle-timeout-ms = <150>;
         gesture-cooldown-ms = <500>;
