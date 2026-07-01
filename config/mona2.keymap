@@ -17,26 +17,20 @@
 
 / {
     behaviors {
-        mg_set: behavior_mg_set {
-            compatible = "zmk,behavior-mg-set";
-            #binding-cells = <1>;
-            display-name = "Mouse Gesture Set";
-        };
-
         mg_set_0: behavior_mg_set_0 {
-            compatible = "zmk,behavior-mg-set";
+            compatible = "zmk,behavior-mg-set-fixed";
             #binding-cells = <0>;
             display-name = "Mouse Gesture Key 0";
         };
 
         mg_set_1: behavior_mg_set_1 {
-            compatible = "zmk,behavior-mg-set";
+            compatible = "zmk,behavior-mg-set-fixed";
             #binding-cells = <0>;
             display-name = "Mouse Gesture Key 1";
         };
 
         mg_set_2: behavior_mg_set_2 {
-            compatible = "zmk,behavior-mg-set";
+            compatible = "zmk,behavior-mg-set-fixed";
             #binding-cells = <0>;
             display-name = "Mouse Gesture Key 2";
         };
