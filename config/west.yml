@@ -57,7 +57,7 @@ manifest:
     # ── Mouse Gesture (kot149 + custom RPC) ──
     - name: zmk-mouse-gesture
       remote: shakushakupanda      # <-- Phase 5: forked with runtime trie API
-      revision: v1
+      revision: suppress-cursor-while-active
     - name: zmk-module-mouse-gesture-rpc
       remote: shakushakupanda
       revision: expose-mg-set-to-studio
