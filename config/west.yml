@@ -60,6 +60,6 @@ manifest:
       revision: v1
     - name: zmk-module-mouse-gesture-rpc
       remote: shakushakupanda
-      revision: main
+      revision: expose-mg-set-to-studio
   self:
     path: config
