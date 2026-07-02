@@ -104,24 +104,11 @@
             bindings = <&kp ESC>;
         };
     };
-    inertial_scroll: inertial_scroll {
-        compatible = "zmk,input-processor-inertial-scroll";
-        status = "okay";
-        #input-processor-cells = <0>;
-        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
-        enabled;
-        tick-ms = <20>;
-        idle-ms = <28>;
-        decay-percent = <86>;
-        impulse-percent = <180>;
-        min-velocity-q8 = <96>;
-        max-ticks = <36>;
-    };
 
 };
 
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-    input-processors = <&mg &mouse_runtime_input_processor &scroll_runtime_input_processor &inertial_scroll>;
+    input-processors = <&mg &mouse_runtime_input_processor &scroll_runtime_input_processor>;
 };
