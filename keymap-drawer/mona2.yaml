@@ -93,7 +93,7 @@ layers:
   - '~'
   - {t: ▽, type: trans}
   - '*'
-  - LCTRL
+  - ^
   - (
   - )
   - \
