@@ -1,0 +1,6 @@
+config ZMK_INPUT_PROCESSOR_INERTIAL_SCROLL
+    bool "Enable inertial scroll input processor"
+    default y
+    help
+      Adds a lightweight input processor that appends decaying wheel events
+      after trackball scrolling, approximating macOS-style inertial scroll.
