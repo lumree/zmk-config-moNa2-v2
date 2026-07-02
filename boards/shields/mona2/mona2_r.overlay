@@ -80,7 +80,7 @@
     xy-to-scroll-enabled;
     active-layers = <0x000000C0>; /* layer6 + layer7 */
     scale-multiplier = <1>;
-    scale-divisor = <4>;
+    scale-divisor = <40>;
 };
 
 &mouse_runtime_input_processor {
