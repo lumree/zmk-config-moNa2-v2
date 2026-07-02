@@ -8,6 +8,9 @@ compatible: "zmk,input-processor-inertial-scroll"
 include: ip_zero_param.yaml
 
 properties:
+  enabled:
+    type: boolean
+    description: Enable inertial scroll by default.
   codes:
     type: array
     required: true

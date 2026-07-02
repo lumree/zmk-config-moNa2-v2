@@ -108,6 +108,7 @@
         compatible = "zmk,input-processor-inertial-scroll";
         #input-processor-cells = <0>;
         codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        enabled;
         tick-ms = <20>;
         idle-ms = <28>;
         decay-percent = <86>;
