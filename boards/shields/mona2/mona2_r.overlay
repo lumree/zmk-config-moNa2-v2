@@ -94,8 +94,7 @@
     mg: mouse_gesture {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        /* Keep the matcher active; &mg_set N switches the active runtime set. */
-        always-active;
+        /* Activate only while &mg_set is held so normal mouse/scroll layers do not trigger gestures. */
         stroke-size = <200>;
         idle-timeout-ms = <150>;
         gesture-cooldown-ms = <500>;
