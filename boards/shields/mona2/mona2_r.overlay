@@ -106,6 +106,7 @@
     };
     inertial_scroll: inertial_scroll {
         compatible = "zmk,input-processor-inertial-scroll";
+        status = "okay";
         #input-processor-cells = <0>;
         codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
         enabled;
