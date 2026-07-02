@@ -104,11 +104,16 @@
             bindings = <&kp ESC>;
         };
     };
+    inertial_scroll: inertial_scroll {
+        compatible = "zmk,input-processor-inertial-scroll";
+        status = "okay";
+        #input-processor-cells = <0>;
+    };
 
 };
 
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-    input-processors = <&mg &mouse_runtime_input_processor &scroll_runtime_input_processor>;
+    input-processors = <&mg &mouse_runtime_input_processor &scroll_runtime_input_processor &inertial_scroll>;
 };
