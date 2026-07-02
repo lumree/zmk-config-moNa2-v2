@@ -11,9 +11,13 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/sys/util.h>
+#include <stdint.h>
+#include <errno.h>
+#include <limits.h>
 #include <drivers/input_processor.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
+
 
 #define Q 8
 #define Q_ONE (1 << Q)
@@ -59,6 +63,7 @@ static void inertial_scroll_work_cb(struct k_work *work) {
     const struct device *dev = data->dev;
     const struct inertial_scroll_config *cfg = dev->config;
     struct zmk_inertial_scroll_settings st = data->settings;
+    uint16_t tick_ms = st.tick_ms == 0 ? 20 : st.tick_ms;
 
     if (!st.enabled) {
         data->velocity[0] = 0;
@@ -93,7 +98,7 @@ static void inertial_scroll_work_cb(struct k_work *work) {
     data->injecting = false;
 
     if (keep_running && data->ticks <= st.max_ticks) {
-        k_work_schedule(&data->work, K_MSEC(st.tick_ms));
+        k_work_schedule(&data->work, K_MSEC(tick_ms));
     }
 }
 
