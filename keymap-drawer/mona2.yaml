@@ -22,7 +22,7 @@ layers:
   - K
   - L
   - {t: ;, h: RIGHT SHIFT}
-  - {t: Z, h: GLOBE}
+  - Z
   - X
   - C
   - V
@@ -35,7 +35,7 @@ layers:
   - .
   - /
   - Mac3
-  - LEFT COMMAND
+  - GLOBE
   - LEFT ALT
   - '&mkp MB1'
   - {t: SPACE, h: LEFT SHIFT}
