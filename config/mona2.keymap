@@ -247,7 +247,7 @@
             bindings = <
 &mt LEFT_CONTROL Q     &kp W             &kp E                  &kp R                       &kp T                                                                          &kp Y              &kp U                         &kp I      &kp O    &kp P
 &shift_a LEFT_SHIFT A  &kp S             &win_alt_d LEFT_GUI D  &f_left_mod LEFT_COMMAND F  &kp G                                                 &kp MINUS                &kp H              &j_right_mod RIGHT_COMMAND J  &kp K      &kp L    &mt RIGHT_SHIFT SEMICOLON
-&kp Z                  &kp X             &kp C                  &kp V                       &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                &kp N              &kp M                         &kp COMMA  &kp DOT  &kp SLASH
+&mt GLOBE Z            &kp X             &kp C                  &kp V                       &kp B                          &lt 12 SINGLE_QUOTE    &kp EQUAL                &kp N              &kp M                         &kp COMMA  &kp DOT  &kp SLASH
 &mo 3                  &kp LEFT_COMMAND  &kp LEFT_ALT           &mkp MB1                    &shift_space LEFT_SHIFT SPACE  &lt 3 TAB              &bksp_lt_hp 2 BACKSPACE  &enter_lt 1 ENTER                                                    &mkp MB1
             >;
 
