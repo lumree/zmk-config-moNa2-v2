@@ -60,7 +60,7 @@ layers:
   - LEFT GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSPACE
+  - F7
   - LEFT ARROW
   - DOWN ARROW
   - RIGHT ARROW
@@ -71,7 +71,7 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - F7
+  - {t: ▽, type: trans}
   - F10
   - PAGE UP
   - F2
@@ -275,7 +275,7 @@ layers:
   - LEFT GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSPACE
+  - F7
   - LEFT ARROW
   - DOWN ARROW
   - RIGHT ARROW
@@ -490,7 +490,7 @@ layers:
   - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSPACE
+  - F7
   - LEFT ARROW
   - DOWN ARROW
   - RIGHT ARROW
@@ -501,7 +501,7 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - F7
+  - {t: ▽, type: trans}
   - F10
   - PAGE UP
   - F2
