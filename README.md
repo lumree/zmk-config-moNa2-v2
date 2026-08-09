@@ -145,6 +145,23 @@ badjeff さんの `zmk-pmw3610-driver` から
 PAW3222 版ビルドは従来どおり sekigon-gonnoc さんのドライバを使うため影響ありません
 （`config/paw3222.overlay` で compatible を上書きしています）。
 
+### 慣性スクロールをデフォルト無効にする
+
+マウスジェスチャーの慣性スクロール（スクロールを止めたあと惰性で流れる挙動）は、
+`zmk-module-mouse-gesture-rpc` 側で入力プロセッサの初期値と設定ストアの初期値の
+**両方が有効にハードコード**されており、キーマップや conf からは変えられません。
+
+そのため `docs/mouse-gesture-rpc.patch` にデフォルトを無効化する差分を用意しています。
+自分の fork に当てると慣性スクロールは既定でオフになり、必要なときだけ
+DYA Studio の Web UI から有効化できます
+（有効にした設定はフラッシュに保存され、次回起動時にも復元されます）。
+
+パッチには下記の ZMK v0.4 API 改名対応も含まれているので、まとめて適用してください。
+
+> 完全に無効でよいなら、`mona2_r.overlay` の `&trackball_central_listener` の
+> `input-processors` から `&inertial_scroll` を外す方法もあります。
+> ただしその場合は DYA Studio からも有効化できなくなります。
+
 ### mouse-gesture-rpc の互換シムについて
 
 `shakushakupanda/zmk-module-mouse-gesture-rpc` (ブランチ `expose-mg-set-to-studio`) が
@@ -152,7 +169,7 @@ ZMK v0.4 で消えた `zmk_endpoints_send_mouse_report()` を呼んでいるた�
 そのままではリンクエラーになります。
 
 暫定対応として本リポジトリに互換シム (`compat/zmk_v0_4_endpoints_compat.c`) を置いています。
-**本来はモジュール側を直すのが正しい**ので、`docs/mouse-gesture-rpc-zmk-v0.4.patch` を
+**本来はモジュール側を直すのが正しい**ので、`docs/mouse-gesture-rpc.patch` を
 自分の fork に適用してください。適用後はシム関連（`CMakeLists.txt` の該当ブロック、
 `compat/`、`zephyr/module.yml` の `cmake: .`）を削除できます。
 

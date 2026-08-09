@@ -129,7 +129,7 @@ manifest:
     # NOTE: zmk-module-mouse-gesture-rpc は ZMK v0.4 で削除された
     #       zmk_endpoints_send_mouse_report() を呼んでいるため、
     #       zmk_endpoint_send_mouse_report() へ改名が必要。
-    #       docs/mouse-gesture-rpc-zmk-v0.4.patch を参照。
+    #       docs/mouse-gesture-rpc.patch を参照。
     - name: zmk-mouse-gesture
       remote: shakushakupanda
       revision: suppress-cursor-while-active

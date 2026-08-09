@@ -11,7 +11,7 @@
  * そのままだとリンク時に undefined reference になる。
  *
  * 本来はモジュール側 (自分の fork) を直すのが正しい。
- * 直し方は docs/mouse-gesture-rpc-zmk-v0.4.patch を参照。
+ * 直し方は docs/mouse-gesture-rpc.patch を参照。
  * モジュール側を修正したら、このファイルと CMakeLists.txt の該当行、
  * zephyr/module.yml の `cmake: .` は削除してよい。
  *

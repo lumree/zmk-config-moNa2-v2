@@ -1,0 +1,73 @@
+From: mona2 dya-studio-v2
+Subject: [PATCH] ZMK v0.4 対応 + 慣性スクロールをデフォルト無効化
+
+適用先リポジトリ:
+  https://github.com/shakushakupanda/zmk-module-mouse-gesture-rpc
+  ブランチ: expose-mg-set-to-studio
+
+このパッチは 2 つの変更を含みます。
+
+1. ZMK v0.4 の endpoints API 改名への追従
+   ZMK v0.4 (cormoran/zmk main+dya) で
+     zmk_endpoints_send_mouse_report()  ->  zmk_endpoint_send_mouse_report()
+   と改名されたため、旧名のままだとリンク時に
+     undefined reference to `zmk_endpoints_send_mouse_report'
+   で失敗する。
+
+2. 慣性スクロールをデフォルト無効化
+   入力プロセッサ側の初期値と、設定ストアの初期値の両方が true に
+   ハードコードされていたため、この 2 箇所を false にする。
+   DYA Studio の Web UI から有効化でき、その選択はフラッシュに保存されて
+   次回起動時にも復元されるので、「既定はオフ、使いたい人だけオン」になる。
+
+適用方法:
+  git clone -b expose-mg-set-to-studio https://github.com/shakushakupanda/zmk-module-mouse-gesture-rpc
+  cd zmk-module-mouse-gesture-rpc
+  git apply /path/to/mouse-gesture-rpc.patch
+  git commit -am "Follow ZMK v0.4 endpoints API rename; default inertial scroll off"
+  git push
+
+1. を取り込んだら、本リポジトリの
+  - CMakeLists.txt の CONFIG_ZMK_MOUSE_GESTURE_RPC ブロック
+  - compat/zmk_v0_4_endpoints_compat.c
+  - zephyr/module.yml の `cmake: .`
+を削除してよい (互換シムが不要になるため)。
+
+---
+diff --git a/src/input_processors/input_processor_inertial_scroll.c b/src/input_processors/input_processor_inertial_scroll.c
+index 03dc9d6..1e40b10 100644
+--- a/src/input_processors/input_processor_inertial_scroll.c
++++ b/src/input_processors/input_processor_inertial_scroll.c
+@@ -108,7 +108,7 @@ static void inertial_scroll_work_cb(struct k_work *work) {
+ 
+     if (scroll_x != 0 || scroll_y != 0) {
+         zmk_hid_mouse_scroll_set(scroll_x, scroll_y);
+-        zmk_endpoints_send_mouse_report();
++        zmk_endpoint_send_mouse_report();
+         zmk_hid_mouse_scroll_set(0, 0);
+     }
+ 
+@@ -153,7 +153,9 @@ static int inertial_scroll_init(const struct device *dev) {
+         g_inertial_scroll_data = data;
+     }
+     data->settings = (struct zmk_inertial_scroll_settings){
+-        .enabled = true,
++        /* Default OFF: inertial scroll is opt-in from the Studio web UI.
++         * Once toggled there the choice is persisted and reloaded at boot. */
++        .enabled = false,
+         .tick_ms = 20,
+         .idle_ms = 28,
+         .decay_percent = 86,
+diff --git a/src/storage/gesture_store.c b/src/storage/gesture_store.c
+index 04fb5d4..aba5456 100644
+--- a/src/storage/gesture_store.c
++++ b/src/storage/gesture_store.c
+@@ -51,7 +51,7 @@ static struct mg_settings g_settings = {
+     .enable_eager_mode   = false,
+     .always_active       = false,
+ 
+-    .inertial_scroll_enabled         = true,
++    .inertial_scroll_enabled         = false,
+     .inertial_scroll_tick_ms         = 20,
+     .inertial_scroll_idle_ms         = 28,
+     .inertial_scroll_decay_percent   = 86,
