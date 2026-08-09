@@ -54,7 +54,7 @@ manifest:
     #   remote: cormoran
     #   revision: main
 
-    # ── マクロ / コンボのランタイム編集 (今回の追加分) ──────────
+    # ── マクロ / コンボのランタイム編集 ─────────────────────────
     - name: zmk-feature-runtime-combo
       remote: cormoran
       revision: main
@@ -62,11 +62,30 @@ manifest:
       remote: cormoran
       revision: main
 
+    # ── DYA Studio の診断タブ用 ─────────────────────────────────
+    # キースイッチ (キー押下統計とチャタリング検出)
+    - name: zmk-feature-kscan-diagnostics
+      remote: cormoran
+      revision: main
+    # キースイッチ診断のライブ表示 (kscan-diagnostics の推奨依存)
+    - name: zmk-feature-input-stream
+      remote: cormoran
+      revision: main
+    # スタック使用量など開発者向けツール
+    - name: zmk-module-devtool
+      remote: cormoran
+      revision: main
+
     # ── 既存モジュール ──────────────────────────────────────────
-    # ZMK v0.4 系に合わせて zmk-0.3 -> zmk-0.4 へ切替
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: zmk-0.4
+    # トラックボール (PMW3610)
+    # DYA Studio の「トラックボールセンサー」診断タブを使うため、
+    # badjeff/zmk-pmw3610-driver から cormoran さんの custom Studio RPC 対応版へ移行。
+    # compatible が "pixart,pmw3610-alt" -> "cormoran,pmw3610" に変わり、
+    # swap-xy / invert-x / invert-y は devicetree プロパティではなく
+    # CONFIG_PMW3610_SWAP_XY / _INVERT_X / _INVERT_Y (かつ Studio から実行時変更可) になる。
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
+      revision: main
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main

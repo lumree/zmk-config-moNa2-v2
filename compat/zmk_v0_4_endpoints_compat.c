@@ -14,10 +14,14 @@
  * 直し方は docs/mouse-gesture-rpc-zmk-v0.4.patch を参照。
  * モジュール側を修正したら、このファイルと CMakeLists.txt の該当行、
  * zephyr/module.yml の `cmake: .` は削除してよい。
+ *
+ * NOTE: <zmk/endpoints.h> は include しない。
+ *       このシムは Zephyr モジュールとして独立したライブラリにビルドされ、
+ *       ZMK app の include ディレクトリが通っていないため。
+ *       必要なのは 1 関数のプロトタイプだけなので自前で宣言する。
  */
 
-#include <zmk/endpoints.h>
-
+int zmk_endpoint_send_mouse_report(void);
 int zmk_endpoints_send_mouse_report(void);
 
 int zmk_endpoints_send_mouse_report(void) {

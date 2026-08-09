@@ -56,22 +56,24 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         force-awake;
 #else /* default: PMW3610 */
-        /* NOTE: Zephyr 4.1 (ZMK v0.4 系) が純正の "pixart,pmw3610" ドライバを
-           取り込んだため、badjeff さんのモジュールは zmk-0.4 ブランチで
-           compatible を "pixart,pmw3610-alt" へ、CONFIG を CONFIG_PMW3610_ALT_* へ
-           改名している。旧 "pixart,pmw3610" のままだと Zephyr 純正バインディングに
-           解決され `motion-gpios is marked as required` でビルドが落ちる。 */
-        compatible = "pixart,pmw3610-alt";
+        /* cormoran さんの custom Studio RPC 対応 PMW3610 ドライバ。
+           DYA Studio の「トラックボールセンサー」診断タブがこれを要求する。
+           (Zephyr 4.1 が純正 "pixart,pmw3610" ドライバを取り込んだため、
+            そもそも旧 compatible "pixart,pmw3610" はもう使えない。)
+
+           軸の反転は devicetree ではなく
+           CONFIG_PMW3610_SWAP_XY / _INVERT_X / _INVERT_Y で指定する。
+           DYA Studio から実行時にも変更できる (mona2_r.conf 参照)。 */
+        compatible = "cormoran,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <600>;
-        //swap-xy;
-        invert-x; //COROPIT版ではコメントアウトを外す
-        //invert-y; //この個体ではY軸は反転不要だったためコメントアウト
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+        /* DYA Studio 上でこのセンサーを識別するための短い ID */
+        settings-id = "tball";
 #endif
     };
 };

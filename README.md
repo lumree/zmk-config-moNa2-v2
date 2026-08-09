@@ -56,6 +56,8 @@ DYA Studio は ZMK Studio をベースに、
 | Studio 系 CONFIG (`CONFIG_ZMK_STUDIO`, `CONFIG_ZMK_CUSTOM_SETTINGS`, `CONFIG_ZMK_BLE_MANAGEMENT`, `CONFIG_ZMK_SETTINGS_RPC`, `CONFIG_ZMK_RUNTIME_INPUT_PROCESSOR`, `CONFIG_ZMK_RUNTIME_MACRO`, `CONFIG_ZMK_RUNTIME_COMBO` ほか) | `config/mona2_r.conf` |
 | 静的コンボ (`zmk,combos`) を `runtime_combo_defaults` へ移行 | `config/mona2.keymap` |
 | `&rmacro` (ランタイムマクロ behavior) を利用可能に | `config/mona2.keymap` |
+| **DYA Studio 診断タブ用モジュール (kscan-diagnostics / input-stream / devtool) を追加** | `config/west.yml`, `config/mona2_r.conf`, `config/mona2_l.conf` |
+| **トラックボールドライバを cormoran さんの Studio RPC 対応版へ移行** | `config/west.yml`, `mona2_r.overlay`, `Kconfig.defconfig`, `mona2_r.conf` |
 | トラックボール処理を Runtime Input Processor に置換 | `boards/shields/mona2/mona2.dtsi`, `mona2_r.overlay` |
 | `&studio_unlock` を `ble_win` / `ble_mac` レイヤー右上に配置 | `config/mona2.keymap` |
 | 全レイヤーに `display-name` を設定 | `config/mona2.keymap` |
@@ -72,10 +74,45 @@ DYA Studio は ZMK Studio をベースに、
 | 変更 | 対応 |
 | --- | --- |
 | ボード名 `seeeduino_xiao_ble` → `xiao_ble`、ZMK 用バリアント `/nrf52840/zmk` が必須 | `build.yaml` |
-| Zephyr 4.1 が純正 `pixart,pmw3610` ドライバを同梱したため、badjeff さんのモジュールは compatible が `pixart,pmw3610-alt`、CONFIG が `CONFIG_PMW3610_ALT_*` に改名 | `mona2_r.overlay`, `Kconfig.defconfig`, `mona2_r.conf`, `west.yml` (`zmk-0.3` → `zmk-0.4`) |
+| Zephyr 4.1 が純正 `pixart,pmw3610` ドライバを同梱したため、旧 compatible `pixart,pmw3610` が使えなくなった | トラックボールドライバを cormoran さんの版へ移行（下記参照） |
 | `zmk-rgbled-widget` の `v0.3` ブランチは Zephyr 3.5 向け | `west.yml` (`v0.3` → `main`) |
 | endpoints API が `zmk_endpoints_send_mouse_report()` → `zmk_endpoint_send_mouse_report()` に改名 | `compat/zmk_v0_4_endpoints_compat.c` の互換シム（詳細は下記） |
 | 再利用 GitHub Actions ワークフローが `@v0.3.0` のままだと Zephyr 4.1 でビルドできない | `.github/workflows/build.yml` (`@main`) |
+
+## DYA Studio の診断タブ対応
+
+DYA Studio の診断ページには専用モジュールが必要なパネルがあり、
+未対応だと「このキーボードでは利用できません」と表示されます。以下を有効にしています。
+
+| DYA Studio のパネル | モジュール | 主な CONFIG |
+| --- | --- | --- |
+| キースイッチ（キー押下統計・チャタリング検出） | [zmk-feature-kscan-diagnostics](https://github.com/cormoran/zmk-feature-kscan-diagnostics) | `CONFIG_ZMK_KSCAN_DIAGNOSTICS` |
+| ↑のライブ表示 | [zmk-feature-input-stream](https://github.com/cormoran/zmk-feature-input-stream) | `CONFIG_ZMK_INPUT_STREAM_FEATURE` |
+| トラックボールセンサー（PMW3610 の状態・表面診断） | [zmk-driver-pmw3610-with-custom-studio-rpc](https://github.com/cormoran/zmk-driver-pmw3610-with-custom-studio-rpc) | `CONFIG_ZMK_PMW3610_STUDIO_RPC` |
+| スタック使用量 | [zmk-module-devtool](https://github.com/cormoran/zmk-module-devtool) | `CONFIG_ZMK_DEVTOOL_STACK_USAGE` |
+
+キースイッチ診断は分割キーボードなので、周辺側（左手）の統計を中央側経由で取得するために
+`CONFIG_ZMK_SPLIT_RELAY_EVENT` を有効にし、`CONFIG_ZMK_SPLIT_RELAY_EVENT_DATA_LEN=256` を
+**左右両方の conf に同じ値で**設定しています。
+
+### トラックボールドライバの移行について
+
+「トラックボールセンサー」パネルは cormoran さんのドライバでしか動かないため、
+badjeff さんの `zmk-pmw3610-driver` から
+`zmk-driver-pmw3610-with-custom-studio-rpc` へ移行しました。
+
+- devicetree の compatible が `pixart,pmw3610-alt` → **`cormoran,pmw3610`**
+- **軸の反転は devicetree プロパティではなく Kconfig になりました。**
+  `invert-x;` は `CONFIG_PMW3610_INVERT_X=y` に移動しています
+  （COROPIT 版などで Y も反転したい場合は `CONFIG_PMW3610_INVERT_Y=y`）。
+- CPI・軸反転・ダウンシフト時間などは `CONFIG_ZMK_PMW3610_CUSTOM_SETTINGS=y` により
+  **DYA Studio から実行時に変更・保存できます**。
+- ドライバ実装が変わるため、カーソルの追従感やスリープ復帰の挙動が
+  以前と微妙に変わる可能性があります。違和感があれば DYA Studio 側で
+  CPI やダウンシフト時間を調整してみてください。
+
+PAW3222 版ビルドは従来どおり sekigon-gonnoc さんのドライバを使うため影響ありません
+（`config/paw3222.overlay` で compatible を上書きしています）。
 
 ### mouse-gesture-rpc の互換シムについて
 
@@ -105,9 +142,9 @@ Zephyr は devicetree を Kconfig より **先に** 処理するため、`mona2_
 
 | 構成 | 結果 | FLASH | RAM |
 | --- | --- | --- | --- |
-| `mona2_r rgbled_adapter` (PMW3610) | OK | 45.70% | 55.16% |
-| `mona2_r rgbled_adapter` (PAW3222) | OK | 45.62% | 55.16% |
-| `mona2_l rgbled_adapter` | OK | 24.71% | 18.23% |
+| `mona2_r rgbled_adapter` (PMW3610) | OK | 48.54% | 60.12% |
+| `mona2_r rgbled_adapter` (PAW3222) | OK | 47.84% | 59.73% |
+| `mona2_l rgbled_adapter` | OK | 26.15% | 23.09% |
 | `settings_reset` | OK | 7.31% | 6.66% |
 
 **実機での動作確認（特にトラックボール、マウスジェスチャー、エンコーダ、BLE ペアリング）は未実施です。**

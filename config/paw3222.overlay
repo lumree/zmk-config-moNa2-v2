@@ -18,12 +18,10 @@
     spi-max-frequency = <1000000>;
     force-awake;
 
-    /* PMW3610 (badjeff) 固有プロパティは PAW3222 バインディングには無いので削除 */
+    /* PMW3610 固有プロパティは PAW3222 バインディングには無いので削除 */
     /delete-property/ cpi;
-    /delete-property/ swap-xy;
-    /delete-property/ invert-x;
-    /delete-property/ invert-y;
     /delete-property/ evt-type;
     /delete-property/ x-input-code;
     /delete-property/ y-input-code;
+    /delete-property/ settings-id;
 };

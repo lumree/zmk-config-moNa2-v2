@@ -18,9 +18,9 @@ config ZMK_POINTING
 config SPI
     default y
 
-# ZMK v0.4 (Zephyr 4.1) 以降、badjeff さんのモジュールは
-# Zephyr 純正 PMW3610 ドライバとの衝突を避けるため PMW3610_ALT に改名された
-config PMW3610_ALT
+# cormoran/zmk-driver-pmw3610-with-custom-studio-rpc のドライバ本体
+# (DT に compatible = "cormoran,pmw3610" のノードが無ければ自動的に無効)
+config PMW3610
     default y
 
 config PAW3222
