@@ -92,6 +92,18 @@ manifest:
       remote: cormoran
       revision: main
 
+    # ── OS ごとのデフォルトレイヤー ─────────────────────────────
+    # NOTE: main ブランチには custom Studio RPC が入っておらず
+    #       DYA Studio のパネルから操作できないため、
+    #       cormoran/zmk-keyboard-dya2 v2.0 と同じ codex/custom-rpc-rewrite を使う。
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: codex/custom-rpc-rewrite
+    # デフォルトレイヤーを OS 判定で切り替えるために必要
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: main
+
     # ── 既存モジュール ──────────────────────────────────────────
     # トラックボール (PMW3610)
     # DYA Studio の「トラックボールセンサー」診断タブを使うため、

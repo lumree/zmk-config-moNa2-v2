@@ -94,6 +94,7 @@ DYA Studio の診断ページには専用モジュールが必要なパネルが
 | 安定性（ウォッチドッグ） | [zmk-feature-watchdog](https://github.com/cormoran/zmk-feature-watchdog) | `CONFIG_ZMK_WATCHDOG` |
 | Zephyr settings の閲覧 | [zmk-feature-zephyr-setting-expose](https://github.com/cormoran/zmk-feature-zephyr-setting-expose) | `CONFIG_ZMK_SETTING_EXPOSE` |
 | Studio RPC の性能計測 | [zmk-feature-studio-rpc-perf](https://github.com/cormoran/zmk-feature-studio-rpc-perf) | `CONFIG_ZMK_STUDIO_RPC_PERF` |
+| OS ごとのデフォルトレイヤー | [zmk-feature-default-layer](https://github.com/cormoran/zmk-feature-default-layer) + [zmk-feature-os-detection](https://github.com/cormoran/zmk-feature-os-detection) | `CONFIG_ZMK_DEFAULT_LAYER`, `CONFIG_ZMK_OS_DETECTION` |
 
 ウォッチドッグはフリーズ・ハードフォルト・予期しないリセットを Flash に記録します。
 左右それぞれが自分のインシデントを記録し、Web UI の source セレクタで
@@ -101,6 +102,25 @@ DYA Studio の診断ページには専用モジュールが必要なパネルが
 なお `CONFIG_ZMK_WATCHDOG_FREEZE_DETECT`（既定で有効）は、システムワークキューが
 10 秒以上詰まった場合にインシデントを記録して再起動します。
 この挙動が不要なら `CONFIG_ZMK_WATCHDOG_FREEZE_DETECT=n` を追加してください。
+
+### OS ごとのデフォルトレイヤー
+
+接続先の OS（USB / BLE プロファイルごと）を判定して、起動時のデフォルトレイヤーを
+自動で切り替えられます。mona2 はベースレイヤーが 0 = `WIN` / 1 = `MAC` に分かれているので、
+選択可能な範囲を `CONFIG_ZMK_DEFAULT_LAYER_MIN_INDEX=0` /
+`CONFIG_ZMK_DEFAULT_LAYER_MAX_INDEX=1` に設定しています。
+実際の割り当ては DYA Studio の「OSごとのデフォルトレイヤー」パネルから行ってください。
+
+キーマップには `&df` behavior も入れてあるので、DYA Studio のキーマップエディタから
+`&df DF_SEL <レイヤー>`（指定レイヤーをデフォルトに）や `&df DF_INC`（次のレイヤーへ）を
+任意のキーに割り当てることもできます。
+
+> os-detection 自身の `CONFIG_ZMK_OS_DETECTION_LAYER_*` による自動切替は
+> default-layer モジュールと競合するため有効にしないでください。
+
+`zmk-feature-default-layer` だけは `main` ではなく `codex/custom-rpc-rewrite` ブランチを
+使っています。`main` には DYA Studio 用の custom Studio RPC が入っておらず、
+パネルから操作できないためです（DYA2 v2.0 も同じブランチを使用）。
 
 キースイッチ診断は分割キーボードなので、周辺側（左手）の統計を中央側経由で取得するために
 `CONFIG_ZMK_SPLIT_RELAY_EVENT` を有効にし、`CONFIG_ZMK_SPLIT_RELAY_EVENT_DATA_LEN=256` を
@@ -153,8 +173,8 @@ Zephyr は devicetree を Kconfig より **先に** 処理するため、`mona2_
 
 | 構成 | 結果 | FLASH | RAM |
 | --- | --- | --- | --- |
-| `mona2_r rgbled_adapter` (PMW3610) | OK | 50.25% | 64.69% |
-| `mona2_r rgbled_adapter` (PAW3222) | OK | 49.54% | 64.30% |
+| `mona2_r rgbled_adapter` (PMW3610) | OK | 51.23% | 65.77% |
+| `mona2_r rgbled_adapter` (PAW3222) | OK | 50.53% | 65.43% |
 | `mona2_l rgbled_adapter` | OK | 27.14% | 25.06% |
 | `settings_reset` | OK | 7.31% | 6.66% |
 
