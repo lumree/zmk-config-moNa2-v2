@@ -3,6 +3,11 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors/runtime-sensor-rotate.dtsi>
 #include <behaviors.dtsi>
+/* DYA Studio から作成したマクロを呼び出す `&rmacro <slot>` を定義する。
+   slot は 0 〜 CONFIG_ZMK_RUNTIME_MACRO_COUNT-1 (現状 0〜7)。
+   どのマクロがどのスロットに入っているかは DYA Studio のマクロ一覧で確認する。
+   キーへの割り当ては DYA Studio のキーマップエディタからも行える。 */
+#include <behaviors/runtime_macro.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -54,20 +59,41 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    /* ─────────────────────────────────────────────────────────────
+       コンボ (DYA Studio から編集可能)
+
+       旧 `combos { compatible = "zmk,combos"; }` はコンパイル時固定で
+       DYA Studio から編集できないため、zmk-feature-runtime-combo の
+       「コンパイル時デフォルト」ノードへ移行した。
+       ここに書いた内容はフラッシュ直後から有効で、設定を消しても復活する。
+       DYA Studio 側で編集するとそのスロットだけ上書きされ、
+       Web UI の "Reset to Default" でここの値へ戻せる。
+
+       スロット総数は CONFIG_ZMK_RUNTIME_COMBO_MAX_COMBOS (現状 16)。
+       未使用スロット (2〜15) は DYA Studio から自由に追加できる。
+       ────────────────────────────────────────────────────────── */
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
 
         layer4_ESC {
+            slot = <0>;
+            display-name = "Layer4 ESC";
+            key-positions = <38 39>;
             bindings = <&lt 4 ESC>;
-            key-positions = <39 38>;
         };
 
         tab {
-            bindings = <&kp TAB>;
+            slot = <1>;
+            display-name = "Tab";
             key-positions = <11 12>;
+            bindings = <&kp TAB>;
         };
     };
 
+    /* 静的マクロ。キーマップ上で &BT0 / &screenshot などの名前で直接
+       参照しているため、そのまま残している (DYA Studio 上では編集不可)。
+       DYA Studio から編集したいマクロは Web UI で新規作成し、
+       キーに `&rmacro <slot>` を割り当てて使う。 */
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";

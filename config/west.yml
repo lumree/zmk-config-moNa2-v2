@@ -14,49 +14,77 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: zettaface  # <-- Input Processor Keybind
       url-base: https://github.com/zettaface
-    - name: kot149       # <-- Mouse Gesture
+    - name: kot149       # <-- Mouse Gesture (upstream)
       url-base: https://github.com/kot149
     - name: shakushakupanda  # <-- mouse gesture RPC module
       url-base: https://github.com/shakushakupanda
   projects:
-    # ── ZMK 本体は cormoran さんの DYA Studio 対応 fork に切替 ──
+    # ── ZMK 本体 ────────────────────────────────────────────────
+    # DYA Studio の最新機能 (ランタイムマクロ / ランタイムコンボ) は
+    # cormoran さんの custom Studio RPC プロトコルを含む ZMK でしか動かない。
+    # `main+dya` は `main+custom-studio-protocol` を包含する DYA 向けブランチで、
+    # cormoran/zmk-keyboard-dya2 v2.0 が実際に採用している構成。
+    # ベースは ZMK v0.4 系 (Zephyr 4.1) で、旧 `v0.3-branch+dya` (Zephyr 3.5) から
+    # メジャーバージョンが上がっている点に注意。
     - name: zmk
       remote: cormoran
-      revision: v0.3-branch+dya
+      revision: main+dya
       import: app/west.yml
-    # ── DYA Studio modules ──
+
+    # ── DYA Studio 共通基盤 ─────────────────────────────────────
+    # 設定の永続化レイヤ。runtime-input-processor / runtime-combo /
+    # runtime-macro がすべてこの上に乗るため必須。
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: main
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: 851661c
-    # zmk-module-battery-history は使わないので無効化
-    # - name: zmk-module-battery-history
-    #   remote: cormoran
-    #   revision: main
+      revision: main
     - name: zmk-module-settings-rpc
       remote: cormoran
       revision: main
     - name: zmk-module-runtime-input-processor
       remote: cormoran
-      revision: dbf92f7
+      revision: main
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
-    # ── 既存モジュール ──
+    # zmk-module-battery-history は使わないので無効化
+    # - name: zmk-module-battery-history
+    #   remote: cormoran
+    #   revision: main
+
+    # ── マクロ / コンボのランタイム編集 (今回の追加分) ──────────
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: main
+
+    # ── 既存モジュール ──────────────────────────────────────────
+    # ZMK v0.4 系に合わせて zmk-0.3 -> zmk-0.4 へ切替
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: zmk-0.3
+      revision: zmk-0.4
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
+    # v0.3 ブランチは Zephyr 3.5 向けなので main (最新 ZMK 向け) へ切替
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: v0.3
+      revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
-    # ── Mouse Gesture (kot149 + custom RPC) ──
+
+    # ── Mouse Gesture (kot149 + custom RPC) ─────────────────────
+    # NOTE: zmk-module-mouse-gesture-rpc は ZMK v0.4 で削除された
+    #       zmk_endpoints_send_mouse_report() を呼んでいるため、
+    #       zmk_endpoint_send_mouse_report() へ改名が必要。
+    #       docs/mouse-gesture-rpc-zmk-v0.4.patch を参照。
     - name: zmk-mouse-gesture
-      remote: shakushakupanda      # <-- Phase 5: forked with runtime trie API
+      remote: shakushakupanda
       revision: suppress-cursor-while-active
     - name: zmk-module-mouse-gesture-rpc
       remote: shakushakupanda

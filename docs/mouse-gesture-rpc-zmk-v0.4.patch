@@ -1,0 +1,39 @@
+From: mona2 dya-studio-v2 migration
+Subject: [PATCH] ZMK v0.4 で改名された endpoints API に追従する
+
+ZMK v0.4 (cormoran/zmk main+dya) で
+  zmk_endpoints_send_mouse_report()  ->  zmk_endpoint_send_mouse_report()
+と改名されたため、旧名のままだとリンク時に
+
+  undefined reference to `zmk_endpoints_send_mouse_report'
+
+で失敗する。
+
+適用先リポジトリ:
+  https://github.com/shakushakupanda/zmk-module-mouse-gesture-rpc
+  ブランチ: expose-mg-set-to-studio
+
+適用方法:
+  git clone -b expose-mg-set-to-studio https://github.com/shakushakupanda/zmk-module-mouse-gesture-rpc
+  cd zmk-module-mouse-gesture-rpc
+  git apply /path/to/mouse-gesture-rpc-zmk-v0.4.patch
+  git commit -am "Follow ZMK v0.4 endpoints API rename"
+  git push
+
+このパッチをモジュール側に取り込んだら、本リポジトリの
+  - CMakeLists.txt の CONFIG_ZMK_MOUSE_GESTURE_RPC ブロック
+  - compat/zmk_v0_4_endpoints_compat.c
+  - zephyr/module.yml の `cmake: .`
+を削除してよい (互換シムが不要になるため)。
+
+---
+diff --git a/src/input_processors/input_processor_inertial_scroll.c b/src/input_processors/input_processor_inertial_scroll.c
+--- a/src/input_processors/input_processor_inertial_scroll.c
++++ b/src/input_processors/input_processor_inertial_scroll.c
+@@ -108,7 +108,7 @@
+     if (scroll_x != 0 || scroll_y != 0) {
+         zmk_hid_mouse_scroll_set(scroll_x, scroll_y);
+-        zmk_endpoints_send_mouse_report();
++        zmk_endpoint_send_mouse_report();
+         zmk_hid_mouse_scroll_set(0, 0);
+     }

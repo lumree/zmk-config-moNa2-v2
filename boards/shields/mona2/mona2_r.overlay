@@ -56,7 +56,12 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         force-awake;
 #else /* default: PMW3610 */
-        compatible = "pixart,pmw3610";
+        /* NOTE: Zephyr 4.1 (ZMK v0.4 系) が純正の "pixart,pmw3610" ドライバを
+           取り込んだため、badjeff さんのモジュールは zmk-0.4 ブランチで
+           compatible を "pixart,pmw3610-alt" へ、CONFIG を CONFIG_PMW3610_ALT_* へ
+           改名している。旧 "pixart,pmw3610" のままだと Zephyr 純正バインディングに
+           解決され `motion-gpios is marked as required` でビルドが落ちる。 */
+        compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;

@@ -18,7 +18,9 @@ config ZMK_POINTING
 config SPI
     default y
 
-config PMW3610
+# ZMK v0.4 (Zephyr 4.1) 以降、badjeff さんのモジュールは
+# Zephyr 純正 PMW3610 ドライバとの衝突を避けるため PMW3610_ALT に改名された
+config PMW3610_ALT
     default y
 
 config PAW3222
