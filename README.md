@@ -162,6 +162,21 @@ DYA Studio の Web UI から有効化できます
 > `input-processors` から `&inertial_scroll` を外す方法もあります。
 > ただしその場合は DYA Studio からも有効化できなくなります。
 
+### Web UI の数値入力欄が最初の1桁で固まる問題
+
+`zmk-module-mouse-gesture-rpc` の Web UI（`main` ブランチの `web/src/App.tsx`）で、
+Tick interval / Start delay / Min velocity などの数値欄に値を打ち直しても
+最初の1桁のまま動かなくなる不具合があります。
+
+`NumberField` が 1 文字入力するたびに親の state を更新し、その変更を `useEffect` が
+拾って入力欄の文字列を書き戻すため、制御コンポーネントの value が毎キーストロークで
+差し替わってキャレットが先頭に戻ります。`2` のあとに `0` を打つと `02` になり
+`Number("02")` = 2 に丸められるので、見た目が固まります。
+
+修正差分を `docs/mouse-gesture-web-numberfield.patch` に用意しています
+（入力中はローカルに保持し、blur / Enter で確定する形に変更）。
+このパッチだけ適用先が **`main` ブランチ** なので注意してください。
+
 ### mouse-gesture-rpc の互換シムについて
 
 `shakushakupanda/zmk-module-mouse-gesture-rpc` (ブランチ `expose-mg-set-to-studio`) が
