@@ -75,6 +75,22 @@ manifest:
     - name: zmk-module-devtool
       remote: cormoran
       revision: main
+    # デバイス情報 (ビルド / ハードウェア / ランタイムの詳細)
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: main
+    # 安定性 (フリーズ・クラッシュ・予期しないリセットの記録)
+    - name: zmk-feature-watchdog
+      remote: cormoran
+      revision: main
+    # Zephyr settings の閲覧
+    - name: zmk-feature-zephyr-setting-expose
+      remote: cormoran
+      revision: main
+    # Studio RPC の性能計測
+    - name: zmk-feature-studio-rpc-perf
+      remote: cormoran
+      revision: main
 
     # ── 既存モジュール ──────────────────────────────────────────
     # トラックボール (PMW3610)

@@ -90,6 +90,17 @@ DYA Studio の診断ページには専用モジュールが必要なパネルが
 | ↑のライブ表示 | [zmk-feature-input-stream](https://github.com/cormoran/zmk-feature-input-stream) | `CONFIG_ZMK_INPUT_STREAM_FEATURE` |
 | トラックボールセンサー（PMW3610 の状態・表面診断） | [zmk-driver-pmw3610-with-custom-studio-rpc](https://github.com/cormoran/zmk-driver-pmw3610-with-custom-studio-rpc) | `CONFIG_ZMK_PMW3610_STUDIO_RPC` |
 | スタック使用量 | [zmk-module-devtool](https://github.com/cormoran/zmk-module-devtool) | `CONFIG_ZMK_DEVTOOL_STACK_USAGE` |
+| デバイス情報（ビルド・ハードウェア・ランタイム詳細） | [zmk-feature-device-info](https://github.com/cormoran/zmk-feature-device-info) | `CONFIG_ZMK_DEVICE_INFO` |
+| 安定性（ウォッチドッグ） | [zmk-feature-watchdog](https://github.com/cormoran/zmk-feature-watchdog) | `CONFIG_ZMK_WATCHDOG` |
+| Zephyr settings の閲覧 | [zmk-feature-zephyr-setting-expose](https://github.com/cormoran/zmk-feature-zephyr-setting-expose) | `CONFIG_ZMK_SETTING_EXPOSE` |
+| Studio RPC の性能計測 | [zmk-feature-studio-rpc-perf](https://github.com/cormoran/zmk-feature-studio-rpc-perf) | `CONFIG_ZMK_STUDIO_RPC_PERF` |
+
+ウォッチドッグはフリーズ・ハードフォルト・予期しないリセットを Flash に記録します。
+左右それぞれが自分のインシデントを記録し、Web UI の source セレクタで
+「Central」「Peripheral」を切り替えて参照できます。
+なお `CONFIG_ZMK_WATCHDOG_FREEZE_DETECT`（既定で有効）は、システムワークキューが
+10 秒以上詰まった場合にインシデントを記録して再起動します。
+この挙動が不要なら `CONFIG_ZMK_WATCHDOG_FREEZE_DETECT=n` を追加してください。
 
 キースイッチ診断は分割キーボードなので、周辺側（左手）の統計を中央側経由で取得するために
 `CONFIG_ZMK_SPLIT_RELAY_EVENT` を有効にし、`CONFIG_ZMK_SPLIT_RELAY_EVENT_DATA_LEN=256` を
@@ -142,9 +153,9 @@ Zephyr は devicetree を Kconfig より **先に** 処理するため、`mona2_
 
 | 構成 | 結果 | FLASH | RAM |
 | --- | --- | --- | --- |
-| `mona2_r rgbled_adapter` (PMW3610) | OK | 48.54% | 60.12% |
-| `mona2_r rgbled_adapter` (PAW3222) | OK | 47.84% | 59.73% |
-| `mona2_l rgbled_adapter` | OK | 26.15% | 23.09% |
+| `mona2_r rgbled_adapter` (PMW3610) | OK | 50.25% | 64.69% |
+| `mona2_r rgbled_adapter` (PAW3222) | OK | 49.54% | 64.30% |
+| `mona2_l rgbled_adapter` | OK | 27.14% | 25.06% |
 | `settings_reset` | OK | 7.31% | 6.66% |
 
 **実機での動作確認（特にトラックボール、マウスジェスチャー、エンコーダ、BLE ペアリング）は未実施です。**
