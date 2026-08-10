@@ -76,7 +76,7 @@ DYA Studio は ZMK Studio をベースに、
 | ボード名 `seeeduino_xiao_ble` → `xiao_ble`、ZMK 用バリアント `/nrf52840/zmk` が必須 | `build.yaml` |
 | Zephyr 4.1 が純正 `pixart,pmw3610` ドライバを同梱したため、旧 compatible `pixart,pmw3610` が使えなくなった | トラックボールドライバを cormoran さんの版へ移行（下記参照） |
 | `zmk-rgbled-widget` の `v0.3` ブランチは Zephyr 3.5 向け | `west.yml` (`v0.3` → `main`) |
-| endpoints API が `zmk_endpoints_send_mouse_report()` → `zmk_endpoint_send_mouse_report()` に改名 | `compat/zmk_v0_4_endpoints_compat.c` の互換シム（詳細は下記） |
+| endpoints API が `zmk_endpoints_send_mouse_report()` → `zmk_endpoint_send_mouse_report()` に改名 | `zmk-module-mouse-gesture-rpc` の `main` に取り込み済み |
 | 再利用 GitHub Actions ワークフローが `@v0.3.0` のままだと Zephyr 4.1 でビルドできない | `.github/workflows/build.yml` (`@main`) |
 
 ## DYA Studio の診断タブ対応
@@ -145,48 +145,32 @@ badjeff さんの `zmk-pmw3610-driver` から
 PAW3222 版ビルドは従来どおり sekigon-gonnoc さんのドライバを使うため影響ありません
 （`config/paw3222.overlay` で compatible を上書きしています）。
 
-### 慣性スクロールをデフォルト無効にする
+### 慣性スクロール
 
-マウスジェスチャーの慣性スクロール（スクロールを止めたあと惰性で流れる挙動）は、
-`zmk-module-mouse-gesture-rpc` 側で入力プロセッサの初期値と設定ストアの初期値の
-**両方が有効にハードコード**されており、キーマップや conf からは変えられません。
-
-そのため `docs/mouse-gesture-rpc.patch` にデフォルトを無効化する差分を用意しています。
-自分の fork に当てると慣性スクロールは既定でオフになり、必要なときだけ
-DYA Studio の Web UI から有効化できます
+マウスジェスチャーの慣性スクロール（スクロールを止めたあと惰性で流れる挙動）は
+**既定で無効**です。使いたい場合は DYA Studio の設定画面から有効化してください
 （有効にした設定はフラッシュに保存され、次回起動時にも復元されます）。
 
-パッチには下記の ZMK v0.4 API 改名対応も含まれているので、まとめて適用してください。
+有効/無効の既定値は `zmk-module-mouse-gesture-rpc` 側でしか変えられません
+（入力プロセッサの初期値と設定ストアの初期値の両方にハードコードされているため）。
+現在はモジュールの `main` で既定オフになっています。
 
 > 完全に無効でよいなら、`mona2_r.overlay` の `&trackball_central_listener` の
 > `input-processors` から `&inertial_scroll` を外す方法もあります。
 > ただしその場合は DYA Studio からも有効化できなくなります。
 
-### Web UI の数値入力欄が最初の1桁で固まる問題
+### mouse-gesture-rpc の参照先について
 
-`zmk-module-mouse-gesture-rpc` の Web UI（`main` ブランチの `web/src/App.tsx`）で、
-Tick interval / Start delay / Min velocity などの数値欄に値を打ち直しても
-最初の1桁のまま動かなくなる不具合があります。
+`zmk-module-mouse-gesture-rpc` は、ファームウェア側の開発ブランチ
+`expose-mg-set-to-studio` を `main` にマージ済みのため、`main` を参照しています。
 
-`NumberField` が 1 文字入力するたびに親の state を更新し、その変更を `useEffect` が
-拾って入力欄の文字列を書き戻すため、制御コンポーネントの value が毎キーストロークで
-差し替わってキャレットが先頭に戻ります。`2` のあとに `0` を打つと `02` になり
-`Number("02")` = 2 に丸められるので、見た目が固まります。
+ZMK v0.4 で消えた `zmk_endpoints_send_mouse_report()` の改名対応と、
+慣性スクロールを既定オフにする変更はモジュール側に取り込まれているので、
+以前このリポジトリに置いていた互換シム（`compat/`、`CMakeLists.txt`、
+`zephyr/module.yml` の `cmake: .`）は不要になり削除しました。
 
-修正差分を `docs/mouse-gesture-web-numberfield.patch` に用意しています
-（入力中はローカルに保持し、blur / Enter で確定する形に変更）。
-このパッチだけ適用先が **`main` ブランチ** なので注意してください。
-
-### mouse-gesture-rpc の互換シムについて
-
-`shakushakupanda/zmk-module-mouse-gesture-rpc` (ブランチ `expose-mg-set-to-studio`) が
-ZMK v0.4 で消えた `zmk_endpoints_send_mouse_report()` を呼んでいるため、
-そのままではリンクエラーになります。
-
-暫定対応として本リポジトリに互換シム (`compat/zmk_v0_4_endpoints_compat.c`) を置いています。
-**本来はモジュール側を直すのが正しい**ので、`docs/mouse-gesture-rpc.patch` を
-自分の fork に適用してください。適用後はシム関連（`CMakeLists.txt` の該当ブロック、
-`compat/`、`zephyr/module.yml` の `cmake: .`）を削除できます。
+Web UI の数値入力欄が最初の1桁で固まる問題の修正差分
+（`docs/mouse-gesture-web-numberfield.patch`）も `main` へ取り込み済みです。
 
 ### PAW3222 版ビルドについて（既存不具合の修正）
 

@@ -126,15 +126,15 @@ manifest:
       revision: main
 
     # ── Mouse Gesture (kot149 + custom RPC) ─────────────────────
-    # NOTE: zmk-module-mouse-gesture-rpc は ZMK v0.4 で削除された
-    #       zmk_endpoints_send_mouse_report() を呼んでいるため、
-    #       zmk_endpoint_send_mouse_report() へ改名が必要。
-    #       docs/mouse-gesture-rpc.patch を参照。
+    # zmk-module-mouse-gesture-rpc は expose-mg-set-to-studio を main へ
+    # マージ済みのため main を参照する。ZMK v0.4 の endpoints API 改名対応と
+    # 慣性スクロールの既定オフもモジュール側に取り込まれているので、
+    # 以前あった互換シム (compat/) は不要になり削除した。
     - name: zmk-mouse-gesture
       remote: shakushakupanda
       revision: suppress-cursor-while-active
     - name: zmk-module-mouse-gesture-rpc
       remote: shakushakupanda
-      revision: expose-mg-set-to-studio
+      revision: main
   self:
     path: config
