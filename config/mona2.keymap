@@ -437,7 +437,7 @@
         Windows4 {
             bindings = <
 &trans        &trans        &trans        &trans        &trans                                                &trans          &trans          &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &kp LG(LS(S))                       &trans            &trans          &kp C_POWER     &trans  &trans  &trans
+&trans  &trans  &trans  &kp LG(LS(S))  &trans  &trans  &trans  &kp C_POWER  &trans  &trans  &trans
 &kp LG(L)     &kp C_SLEEP   &trans        &trans        &trans           &trans      &trans  &trans           &trans          &trans          &trans  &trans
 &trans        &trans        &trans        &trans        &trans           &trans      &trans  &trans                                                          &trans
             >;
