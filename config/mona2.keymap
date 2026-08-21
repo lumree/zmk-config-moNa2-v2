@@ -478,8 +478,8 @@
             display-name = "Bluetooth";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &trans  &trans       &trans       &trans       &Bluetooth4
-&trans  &trans  &trans  &trans  &trans            &trans       &trans  &Bluetooth0  &Bluetooth1  &Bluetooth2  &Bluetooth3
-&trans  &trans  &trans  &trans  &trans  &studio_unlock    &bootloader  &trans  &trans       &trans       &trans       &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans            &trans       &studio_unlock  &Bluetooth0  &Bluetooth1  &Bluetooth2  &Bluetooth3
+&trans  &trans  &trans  &trans  &trans  &trans            &bootloader  &trans          &trans       &trans       &trans       &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans           &trans       &trans                                         &bt BT_CLR_ALL
             >;
 
