@@ -191,6 +191,7 @@ path.combo {
 <g transform="translate(252, 84)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">G</text>
+<text x="0" y="24" class="key hold"><tspan style="font-size: 78%">&amp;mg_set_0</tspan></text>
 </g>
 <g transform="translate(420, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
