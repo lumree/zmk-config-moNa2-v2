@@ -12,8 +12,8 @@ layers:
   - O
   - P
   - {t: A, h: LEFT SHIFT}
-  - {t: S, h: LEFT ALT}
-  - {t: D, h: LEFT GUI}
+  - {t: S, h: Ctl+LEFT ALT}
+  - {t: D, h: LEFT ALT}
   - {t: F, h: LEFT COMMAND}
   - G
   - '-'
@@ -36,7 +36,7 @@ layers:
   - /
   - Mac3
   - GLOBE
-  - LEFT ALT
+  - Ctl+LEFT ALT
   - '&mkp MB1'
   - {t: SPACE, h: LEFT SHIFT}
   - {t: TAB, h: Mac3}
