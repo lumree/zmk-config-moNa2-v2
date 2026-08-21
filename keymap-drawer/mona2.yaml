@@ -672,7 +672,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: '&studio_unlock', type: held}
   - '&bootloader'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
