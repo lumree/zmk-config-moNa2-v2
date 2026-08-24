@@ -19,7 +19,7 @@ layers:
   - '-'
   - H
   - {t: J, h: RIGHT COMMAND}
-  - {t: K, h: '&mg_set_2 2'}
+  - K
   - L
   - {t: ;, h: RIGHT SHIFT}
   - Z
