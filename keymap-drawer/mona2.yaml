@@ -15,7 +15,7 @@ layers:
   - {t: S, h: Gui+Ctl+Alt+LEFT SHIFT}
   - {t: D, h: LEFT ALT}
   - {t: F, h: LEFT COMMAND}
-  - G
+  - {t: G, h: Gui+Ctl+Alt+LEFT SHIFT}
   - '-'
   - H
   - {t: J, h: RIGHT COMMAND}
