@@ -136,10 +136,10 @@ layers:
   - F4
   - F5
   - {t: ▽, type: trans}
+  - '0'
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
   - F6
   - F7
   - F8
@@ -147,10 +147,10 @@ layers:
   - F10
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - RIGHT COMMAND
   - '4'
   - '5'
   - '6'
-  - RIGHT COMMAND
   - F11
   - F12
   - F13
@@ -159,10 +159,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
+  - '0'
   - '1'
   - '2'
   - '3'
-  - '0'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -351,10 +351,10 @@ layers:
   - F4
   - F5
   - {t: ▽, type: trans}
+  - '0'
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
   - F6
   - F7
   - F8
@@ -362,10 +362,10 @@ layers:
   - F10
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - RIGHT COMMAND
   - '4'
   - '5'
   - '6'
-  - RIGHT COMMAND
   - F11
   - F12
   - F13
@@ -374,10 +374,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
+  - '0'
   - '1'
   - '2'
   - '3'
-  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -566,10 +566,10 @@ layers:
   - F4
   - F5
   - {t: ▽, type: trans}
+  - '0'
   - '7'
   - '8'
   - '9'
-  - {t: ▽, type: trans}
   - F6
   - F7
   - F8
@@ -577,10 +577,10 @@ layers:
   - F10
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - RCTRL
   - '4'
   - '5'
   - '6'
-  - RCTRL
   - F11
   - F12
   - F13
@@ -589,10 +589,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '0'
+  - '0'
   - '1'
   - '2'
   - '3'
-  - '0'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
