@@ -350,9 +350,9 @@
 
             display-name = "Mac3";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans             &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp RIGHT_COMMAND  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
 &trans  &trans   &trans   &trans   &trans  &trans    &trans  &trans                                                       &trans
             >;
         };
@@ -413,9 +413,9 @@
 
             display-name = "iPad3";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp RIGHT_COMMAND  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LANGUAGE_2  &kp LANGUAGE_1                                            &trans
             >;
         };
@@ -474,9 +474,9 @@
 
             display-name = "Windows3";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RCTRL
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp RCTRL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
 &trans  &trans   &trans   &trans   &trans  &trans    &trans  &trans                                                  &trans
             >;
         };
