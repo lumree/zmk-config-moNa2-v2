@@ -309,9 +309,9 @@
 
             display-name = "Mac0";
             bindings = <
-&mt LEFT_CONTROL Q     &kp W      &kp E                  &kp R                       &kp T                                                                          &kp Y              &kp U                         &kp I      &kp O    &kp P
+&mt LEFT_CONTROL Q     &kp W      &kp E                  &s_left_mod LG(LEFT_ALT) R  &kp T                                                                          &kp Y              &kp U                         &kp I      &kp O    &kp P
 &shift_a LEFT_SHIFT A  &s_left_mod LG(LEFT_ALT) S  &win_alt_d LEFT_ALT D  &f_left_mod LEFT_COMMAND F  &kp G  &kp MINUS  &kp H  &j_right_mod RIGHT_COMMAND J  &kp K  &kp L  &mt RIGHT_SHIFT SEMICOLON
-&kp Z                  &kp X      &kp C                  &kp V                       &kp B                          &lt 15 SINGLE_QUOTE    &lt 4 EQUAL              &kp N              &kp M                         &kp COMMA  &kp DOT  &kp SLASH
+&kp Z                  &kp X      &kp C                  &s_left_mod LG(LEFT_ALT) V  &kp B                          &lt 15 SINGLE_QUOTE    &lt 4 EQUAL              &kp N              &kp M                         &kp COMMA  &kp DOT  &kp SLASH
 &mo 3  &kp GLOBE  &kp LC(LEFT_ALT)  &mkp MB1  &shift_space LEFT_SHIFT SPACE  &lt 3 TAB  &bksp_lt_hp 2 BACKSPACE  &enter_lt 1 ENTER  &mkp MB1
             >;
 
@@ -324,10 +324,10 @@
 
             display-name = "Mac1";
             bindings = <
-&trans          &trans        &trans        &trans        &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
-&trans        &trans        &trans        &trans        &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
-&trans        &trans        &trans        &trans        &trans  &trans  &trans  &kp F10  &kp PAGE_UP  &kp F2  &kp PAGE_DOWN  &kp ESCAPE
-&trans          &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
+&kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans  &trans  &kp F10  &kp PAGE_UP  &kp F2  &kp PAGE_DOWN  &kp ESCAPE
+&kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(EQUAL)>;
@@ -350,9 +350,9 @@
 
             display-name = "Mac3";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp RIGHT_COMMAND  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &kp RIGHT_COMMAND  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_SHIFT
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
 &trans  &trans   &trans   &trans   &trans  &trans    &trans  &trans                                                       &trans
             >;
         };
@@ -387,10 +387,10 @@
 
             display-name = "iPad1";
             bindings = <
-&trans          &trans        &trans        &trans        &trans                       &kp LC(LS(TAB))    &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
-&trans        &trans        &trans        &trans        &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
-&trans          &trans        &trans        &trans        &trans  &trans    &kp LC(K)  &kp LC(SEMICOLON)  &kp LG(UP_ARROW)  &kp F2          &kp LG(DOWN_ARROW)  &kp ESCAPE
-&trans          &trans        &trans        &mkp MB2      &trans  &trans    &trans     &trans                                                                   &mkp MB2
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                       &kp LC(LS(TAB))    &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
+&kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans    &kp LC(K)  &kp LC(SEMICOLON)  &kp LG(UP_ARROW)  &kp F2          &kp LG(DOWN_ARROW)  &kp ESCAPE
+&kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans     &trans                                                                   &mkp MB2
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(EQUAL)>;
@@ -413,9 +413,9 @@
 
             display-name = "iPad3";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp RIGHT_COMMAND  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_COMMAND
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LANGUAGE_2  &kp LANGUAGE_1                                            &trans
             >;
         };
@@ -448,10 +448,10 @@
 
             display-name = "Windows1";
             bindings = <
-&trans          &trans        &trans        &trans        &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
-&trans        &trans        &trans        &trans     &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
-&trans        &trans        &trans        &trans        &trans  &trans  &trans  &kp F10  &kp PAGE_UP  &kp F2  &kp PAGE_DOWN  &kp ESCAPE
-&trans          &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
+&kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LCTRL  &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans  &trans  &kp F10  &kp PAGE_UP  &kp F2  &kp PAGE_DOWN  &kp ESCAPE
+&kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
             >;
 
             sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
@@ -474,9 +474,9 @@
 
             display-name = "Windows3";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &kp RCTRL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &kp RCTRL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_SHIFT
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0
 &trans  &trans   &trans   &trans   &trans  &trans    &trans  &trans                                                  &trans
             >;
         };
