@@ -309,8 +309,8 @@
 
             display-name = "Mac0";
             bindings = <
-&mt LEFT_CONTROL Q     &kp W      &kp E                  &s_left_mod LG(LEFT_ALT) R  &kp T                                                                          &kp Y              &kp U                         &kp I      &kp O    &kp P
-&shift_a LEFT_SHIFT A  &s_left_mod LG(LEFT_ALT) S  &win_alt_d LEFT_ALT D  &f_left_mod LEFT_COMMAND F  &kp G  &kp MINUS  &kp H  &j_right_mod RIGHT_COMMAND J  &kp K  &kp L  &mt RIGHT_SHIFT SEMICOLON
+&mt LEFT_CONTROL Q     &kp W      &kp E                  &kp R                       &kp T                                                                          &kp Y              &kp U                         &kp I      &kp O    &kp P
+&shift_a LEFT_SHIFT A  &s_left_mod LG(LEFT_ALT) S  &win_alt_d LEFT_ALT D  &f_left_mod LEFT_COMMAND F  &s_left_mod LG(LEFT_ALT) G  &kp MINUS  &kp H  &j_right_mod RIGHT_COMMAND J  &kp K  &kp L  &mt RIGHT_SHIFT SEMICOLON
 &kp Z                  &kp X      &kp C                  &s_left_mod LG(LEFT_ALT) V  &kp B                          &lt 15 SINGLE_QUOTE    &lt 4 EQUAL              &kp N              &kp M                         &kp COMMA  &kp DOT  &kp SLASH
 &mo 3  &kp GLOBE  &kp LC(LEFT_ALT)  &mkp MB1  &shift_space LEFT_SHIFT SPACE  &lt 3 TAB  &bksp_lt_hp 2 BACKSPACE  &enter_lt 1 ENTER  &mkp MB1
             >;
@@ -324,7 +324,7 @@
 
             display-name = "Mac1";
             bindings = <
-&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &trans        &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
 &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans  &trans  &kp F10  &kp PAGE_UP  &kp F2  &kp PAGE_DOWN  &kp ESCAPE
 &kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
@@ -387,7 +387,7 @@
 
             display-name = "iPad1";
             bindings = <
-&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &trans        &trans                       &kp LC(LS(TAB))    &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                       &kp LC(LS(TAB))    &kp LG(LEFT)      &kp UP_ARROW    &kp LG(RIGHT)       &kp LC(TAB)
 &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LEFT_GUI  &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
 &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans    &kp LC(K)  &kp LC(SEMICOLON)  &kp LG(UP_ARROW)  &kp F2          &kp LG(DOWN_ARROW)  &kp ESCAPE
 &kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans     &trans                                                                   &mkp MB2
@@ -448,7 +448,7 @@
 
             display-name = "Windows1";
             bindings = <
-&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &trans        &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
+&kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans                    &kp LC(LS(TAB))  &kp HOME        &kp UP_ARROW    &kp END          &kp LC(TAB)
 &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LCTRL  &trans  &trans  &kp F7  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp DELETE
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans  &trans  &trans  &kp F10  &kp PAGE_UP  &kp F2  &kp PAGE_DOWN  &kp ESCAPE
 &kp LEFT_SHIFT  &trans        &trans        &mkp MB2      &trans  &trans    &trans  &trans                                                            &mkp MB2
