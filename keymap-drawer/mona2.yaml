@@ -431,7 +431,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Windows0:
-  - Q
+  - {t: Q, h: Ctl+LGUI}
   - W
   - E
   - R
